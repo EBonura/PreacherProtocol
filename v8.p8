@@ -107,6 +107,24 @@ function unhex(s, n)
 end
 
 
+function get_controlled_entity()
+  for e in all(entities) do
+    if e.controlled then return e end
+  end
+end
+
+
+function check_entity_collision(x1, y1, w1, h1, x2, y2, w2, h2)
+  return x1 < x2 + w2 and x2 < x1 + w1 and y1 < y2 + h2 and y2 < y1 + h1
+end
+
+
+function wall_collide(x, y, flag)
+  flag = flag or 0
+  return fget(mget(flr(x / 8), flr(y / 8)), flag)
+end
+
+
 -- GAME
 ---------
 function _init()
@@ -127,19 +145,24 @@ function _init()
     [game_state.debrief] = {update = update_debrief, draw = draw_debrief}
   }
 
-  current_game_state = game_state.intro
+  current_game_state = game_state.gameplay
   intro_counter, intro_blink = 0, 0
 
   -- Mission Select
   selected_mission = 1
-  level_select_args = stringToTable("6,40,9,38,mission 1|6,55,9,38,mission 2|6,70,9,38,mission 3|6,85,9,38,mission 4")
+  level_select_args = stringToTable([[
+    6,40,9,38,mission 1|
+    6,55,9,38,mission 2|
+    6,70,9,38,mission 3|
+    6,85,9,38,mission 4]])
   level_select_text_panels = {}
   for level_select_arg in all(level_select_args) do
     add(level_select_text_panels, textpanel:new(unpack(level_select_arg)))
   end
-
+  
   entity_stats_list = {}
-  for t in all(stringToTable([[Player,bot,8,8,100,100,false,1,2|Dervish,bot,7,7,80,40,false,1,5|Vanguard,bot,9,9,120,60,false,2,4|Warden,bot,9,9,120,60,false,3,3|CyberSeer,preacher,14,14,100,60,true,1,2|QuantumCleric,preacher,16,16,120,80,true,1,1]])) do
+  for t in all(stringToTable(
+    [[Player,bot,8,8,100,100,false,1,2,3,100|Dervish,bot,7,7,40,80,false,1,5,3.5,100|Vanguard,bot,9,9,80,60,false,2,4,2,200|Warden,bot,9,9,120,60,false,3,3,2,300|CyberSeer,preacher,14,14,100,60,true,1,2,1,1000|QuantumCleric,preacher,16,16,120,80,true,1,1,1,1500]])) do
     local entity_name = t[1]
     local base_class = t[2]
     entity_stats_list[entity_name] = {
@@ -150,17 +173,19 @@ function _init()
       max_energy = t[6],
       flying = t[7],
       attack_power = t[8],
-      attack_cooldown = t[9]
+      attack_cooldown = t[9],
+      accelleration = t[10],
+      destroy_reward = t[11]
     }
   end
 
   missions_entities_params = {
     { -- Mission 1
-    {7*8, 36*8, true, "Player"},
-    {4*8, 25*8, false, "Dervish"},
-    {15*8, 26*8, false, "Dervish"},
-    {17*8, 43*8, false, "Vanguard"},
-    {50, 155, false, "QuantumCleric"},
+    {5*8, 39*8, true, "Player"},
+    -- {4*8, 25*8, false, "Dervish"},
+    -- {15*8, 26*8, false, "Dervish"},
+    {6*8, 43*8, false, "Vanguard"},
+    -- {50, 155, false, "QuantumCleric"},
     },
     { -- Mission 2
       {70, 80, true, "bot"},
@@ -176,6 +201,21 @@ function _init()
     },
   }
 
+  mission_laser_doors_params = {
+    { -- Mission 1
+    {9*8, 30*8},
+    },
+    { -- Mission 2
+
+    },
+    { -- Mission 3
+
+    },
+    { -- Mission 4
+
+    },
+  }
+
   mission_briefings_params = {
     "Infiltrate the \nNeo-Tokara Complex\n\nevade or \nneutralize guards; \nactivate the 3 \ndata transmission \ntowers",
     "Destroy the \nCore Facility\n\nevade or \nneutralize guards; \ndestroy the energy \ncore",
@@ -186,11 +226,11 @@ function _init()
   -- Mission Brief
   briefing_panel = textpanel:new(52, 40, 60, 74, "")
   -- 6614
-  local stats = stringToTable([[50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100| 
+  local stats = stringToTable([[50, 57, 65, 73, 81, 88, 96, 104, 112, 120| 
+                                50, 55, 61, 66, 72, 77, 83, 88, 94, 100|
+                                50, 53, 56, 60, 63, 66, 70, 73, 76, 80|
                                 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100|
-                                50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100|
-                                50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100|
-                                25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 55 |
+                                1, 2, 2, 3, 3, 4, 4, 5, 5, 6 |
                                 100, 131, 164, 200, 240, 285, 336, 394, 460, 535 |
                                 0,0,0,0,0,0,5,6,2,5,9,3,1,2,2,4 |
                                 0,1,0,0,0,0,0,2,0,0,0,0,0,0,0,0 |
@@ -595,11 +635,21 @@ function load_entities()
     add(entities, entity:new(unpack(params)))
   end
 
+  laser_doors = {}
+  for params in all(mission_laser_doors_params[selected_mission]) do
+    add(laser_doors, laser_door:new(unpack(params)))
+  end
+
   player = get_controlled_entity()
   local health = loadout_select_sliders[1].values[loadout_select_sliders[1].value]
   player.max_health, player.health = health, health
   local energy = loadout_select_sliders[2].values[loadout_select_sliders[2].value]
   player.max_energy, player.energy = energy, energy
+  player.view_radius = loadout_select_sliders[3].values[loadout_select_sliders[3].value]
+  
+  local regen_count = loadout_select_sliders[5].values[loadout_select_sliders[5].value]
+  player.ability_actions[3].current_ammo = regen_count
+  player.ability_actions[3].max_ammo = regen_count
 
   emitters = {}
   for map_y = 0, 127 do 
@@ -610,10 +660,10 @@ function load_entities()
       end
     end
   end
-  
+
   projectiles = {}
   particles = {}
-  view_radius = 50
+  view_radius = player.view_radius
 end
 
 
@@ -624,6 +674,8 @@ function update_gameplay()
   foreach(projectiles, function(e) e:update() end)
   foreach(particles, function(e) e:update() end)
   foreach(emitters, function(e) e:update() end)
+  foreach(laser_doors, function(e) e:update() end)
+
   check_losing_condition()
   check_winning_condition()
   cam:update()
@@ -639,15 +691,16 @@ function draw_gameplay()
   foreach(projectiles, function(p) p:draw() end)
   foreach(particles, function(p) p:draw() end)
   foreach(emitters, function(e) e:draw() end)
-  foreach(entities, function(e) e:draw_overlay() end)
-
+  
   player = get_controlled_entity()
   if player then
     player_position.x, player_position.y = player.x, player.y
   end
-  draw_shadow(player_position.x - cam.x + 5, player_position.y - cam.y + 5, view_radius, swap_palette)
   
   map(0, 0, 0, 0, 128, 128, 2)
+  foreach(entities, function(e) e:draw_overlay() end)
+  foreach(laser_doors, function(p) p:draw() end)
+  draw_shadow(player_position.x - cam.x + 5, player_position.y - cam.y + 5, view_radius, swap_palette)
   player_hud:draw()
 end
 
@@ -827,6 +880,7 @@ end
 ----------
 enemy_state = {
   idle = "idle",
+  patrol = "patrol",
   alert = "alert",
   attack = "attack",
   search = "search"
@@ -858,10 +912,12 @@ function entity:new(x, y, controlled, entity_name)
   self.flying = entity_stats.flying
   self.attack_power = entity_stats.attack_power
   self.attack_cooldown = entity_stats.attack_cooldown
-  self.acceleration = 3
+  self.acceleration = entity_stats.accelleration
+  self.destroy_reward = entity_stats.destroy_reward
   self.stopping_friction = 0.4
   self.mass = 1
   self.facing_angle = 0
+  -- self.patrol_angle = 0.25
   self.animation_timer = 0
   self.hoover_timer = 0
   self.hit_flash_timer = 0
@@ -887,6 +943,7 @@ function entity:new(x, y, controlled, entity_name)
   self.target = {x=self.x, y=self.y}
   self.state_actions = {
     [enemy_state.idle] = entity.idle_behavior,
+    -- [enemy_state.patrol] = entity.patrol_behavior,
     [enemy_state.alert] = entity.alert_behavior,
     [enemy_state.attack] = entity.attack_behavior,
     [enemy_state.search] = entity.search_behavior
@@ -932,24 +989,6 @@ function entity:new(x, y, controlled, entity_name)
   }
 
   return self
-end
-
-
-function get_controlled_entity()
-  for e in all(entities) do
-    if e.controlled then return e end
-  end
-end
-
-
-function check_entity_collision(x1, y1, w1, h1, x2, y2, w2, h2)
-  return x1 < x2 + w2 and x2 < x1 + w1 and y1 < y2 + h2 and y2 < y1 + h1
-end
-
-
-function wall_collide(x, y, flag)
-  flag = flag or 0
-  return fget(mget(flr(x / 8), flr(y / 8)), flag)
 end
 
 
@@ -1123,7 +1162,7 @@ end
 
 
 function entity:player_target_enemy()
-  local min_distance = view_radius + 10
+  local min_distance = self.view_radius
   local closest_enemy = nil
   
   self.target.x, self.target.y = self.x, self.y 
@@ -1166,10 +1205,35 @@ function entity:idle_behavior(can_see_player)
 end
 
 
+-- function entity:patrol_behavior(can_see_player)
+--   if can_see_player then
+--     self.current_state = enemy_state.alert
+--   end
+  
+
+--   printh(sin(self.patrol_angle))
+--   printh(cos(self.patrol_angle))
+
+--   local next_x, next_y = self.x + sin(self.patrol_angle) * 3, self.y + cos(self.patrol_angle)
+
+--   if wall_collide(next_x, next_y) or
+--     wall_collide(next_x + self.width - 1, next_y) or
+--     wall_collide(next_x, next_y + self.height - 1) or
+--     wall_collide(next_x + self.width - 1, next_y + self.height - 1) then
+
+--     self.patrol_angle = (self.patrol_angle + .5) % 1
+--   else
+--     self.target.x, self.target.y = next_x, next_y
+--   end
+  
+--   self:move_towards_target_unless_close(0)
+-- end
+
+
 function entity:search_behavior(can_see_player)
   if can_see_player then
     self.current_state = enemy_state.alert
-  elseif self.frame_counter >= rnd(30)+10 then
+  elseif self.frame_counter >= rnd(30) + 10 then
     self:move_target_randomly()
     self.frame_counter = 0
   else
@@ -1330,6 +1394,22 @@ function entity:apply_physics()
             other.x, other.y, 
             other.width - 1, other.height - 1) then
             apply_force(other)
+          return true
+        end
+      end
+    end
+
+
+    -- Check Laser Door collision
+    for laser_door in all(laser_doors) do
+      if laser_door.active then
+        local collision = check_entity_collision(
+          next_x, next_y, 
+          self.width - 1, self.height - 1, 
+          laser_door.x + 8, laser_door.y, 
+          1, laser_door.end_y - laser_door.y
+        )
+        if collision then
           return true
         end
       end
@@ -1528,12 +1608,7 @@ function entity:draw_overlay()
     self.rectangle_side = 40
   end
 
-
-
-
-  
-
-    -- Draw the target indicator
+    -- -- Draw the target indicator
     -- local corners = {
     --   {dx = 0, dy = 0}, -- Top-left corner
     --   {dx = self.width-1, dy = 0}, -- Top-right corner
@@ -1577,6 +1652,46 @@ function draw_rotating_rect(x, y, side_length, color)
   end
 end
 
+
+-- Laser Door
+--------------
+laser_door = {}
+laser_door.__index = laser_door
+function laser_door:new(x, y)
+  local self = setmetatable({}, laser_door)
+  self.x, self.y = x, y
+  self.active = true
+  self.end_y = self.y + 16
+
+  while not wall_collide(self.x + 7, self.end_y) do
+    self.end_y += 1
+  end
+  return self
+end
+
+
+function laser_door:draw()
+  spr(14, self.x, self.y, 2, 2)
+  if self.active then
+    for i = 0, 2 do
+      line(
+        self.x + 7 + i * 2, 
+        self.y + 13 - i * 4, 
+        self.x + 7 + i * 2, 
+        self.end_y + 2 + i * 4, 8)
+    end
+  end
+end
+
+
+function laser_door:update()
+  for i, door in ipairs(laser_doors) do
+    if door == self then
+      self.active = not emitters[i].active
+      break
+    end
+  end
+end
 
 
 -- Emitter
@@ -1733,7 +1848,7 @@ __gfx__
 eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee00000000000000000000000000000000eeeedddd6667eeeeee1111ee66b666666666666600000000eeeeeeeedd6667ee
 eeeeeeeeee5777eeee5777eeee5777ee00000000000000000000000000000000eeedd66666667eeee111111e66b666666b666bb600000000eeeeeeedd666667e
 ee5777eee577cc7ee577cc7ee577cc7e00000000000000000000000000000000eedddd66666667ee111661116bbbbb666bb66b6600000000eeeeeeed55ddd66e
-e577cc7ee777cc76e777cc7ee777cc7e00000000000000000000000000000000eeddd665dddd66ee011111156b66bbb6bbbbbb6600030000eeeee11d5d111d6e
+e577cc7ee777cc7ee777cc7ee777cc7e00000000000000000000000000000000eeddd665dddd66ee011111156b66bbb6bbbbbb6600030000eeeee11d5d111d6e
 e777cc7ee577777ee577777ee577777e00000000000000000000000000000000eeddd65d1111d6ee00111155666bbbbbbbbbb66603030000eeee11dd5d181d6e
 e577777ee577777e05777770e577077e00000000000000000000000000000000e1ddd65d1881d61e0700555566bbb7bbb7bbbb6603030300eeee1dd55d111d6e
 0577707e0e0ee0e00e0e0ee00eee0ee00000000000000000000000000000000011115d5d1881d61107005755666bbbbbbbbbb7b600000000eeee1d55dddd6eee
@@ -1816,13 +1931,13 @@ eeeeeeeeeeeeeeeeeeeeeeeeeee3333eeeeeeeeeeeeeeeeeeeeeeeeee6655555eeee11555555566e
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 b50404343444545464666656c500000000000000007406d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1069400007406d100000000000000000000
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-1700000000000000000000000000000000000000007406d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1069400007406d100000000000000000000
+1700000000000000000000000017000000000000007406d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1069400007406d100000000000000000000
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-1700000000000000000000000000000000000000007406d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1069400007406d100000000000000000000
+1700000000000000000000000017000000000000007406d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1069400007406d100000000000000000000
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-1700000000000000000000000000000000000000007406d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1069400007400d100000000000000000000
+1700000000000000000000000017000000000000007406d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1069400007400d100000000000000000000
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-17000000000000000000000000000000000000000074b606b60606b6b606b606b606b606b606b606b606b606b60606c694000074000000000000000000000000
+17000000000000000000000000170000000000000074b606b60606b6b606b606b606b606b606b606b606b606b60606c694000074000000000000000000000000
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 171717171717171717171717171717171717171717b50404040404040404040404040404040404040404040404040404c5000074000000000000000000000000
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
