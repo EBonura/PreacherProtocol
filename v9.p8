@@ -5,9 +5,7 @@ __lua__
 
 -- HELPER
 ------------------
-mission_tutorial = "4b5054565555767552565151545052534c7b7b7b7b4b50535054515156755253545175534c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b4b50505350545151567552535451754c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b576c6060603c60607060606070603c6b597b7b7b7b476c60706060603c6060706060606b497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b476c6060706060606060607060606b597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b58603f3f3f5d3f3f3f3f3f3f3f3f6d2c5a7b7b7b7b48603f3f3f3f3f5d3f3f3f3f3f3f60597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b576007071c3f3f3f3f3f3f3f747461697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b48613f6f6e5e1d1d1d1d1d1d1d1d3f60725054567573613f6f6e6e6e5e1d1d1d1d1d3f61697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b4b545675525651515675754c7b7b7b7b7b7b7b7860071c1d1d1d1d1d1d1d741d3f61697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b48613f1d1d1d1d1d1d1d1d1d6f4e3f6b6060606060606c3f1d1d1d1d1d1d1d1d1d1d3f61697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b4b53736c60607060606070606b497b7b7b7b7b7b7b68601c1d1d1d1d1d1d1d1d1d1d3f60797b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b47613f1d1d1d1d1d1d1d1d1d1d5d3f3f3f3f3f3f3f3f3f3f1d1d1d1d1d1d1d1d1d1d3f60797b7b7b7b4b505053545175534c7b7b7b7b7b7b7b7b7b7b7b7b576c606c3f3f3f3f3f3f743f60597b7b7b7b7b7b7b58603f1d1d1d1d0b070c1d1d1d3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b572b6e6e6e6e4e1d1d1d1d1d1d5d3f3f3f3f3f3f3f3f3f3f1d1d1d1d1d1d1d1d1d1d3f606a7b7b7b7b576c70706060606b597b7b7b7b7b7b7b7b7b7b7b7b5860743f1d1d3f3f3f743f3f606a7b7b7b7b7b7b7b47613f1d1d1d1d07071c1d1d1d3f60797b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b77603f1d1d1d5d1d1d1d1d1d1d5d3f6c6060607070606b3f1d1d1d1d3f3f1d1d1d1d3f60797b7b7b7b77603f3f3f5d3f606a7b7b7b7b7b7b7b7b7b7b7b7b48603f1d1d3f6c60606b3f3f606a7b7b7b7b7b7b7b57613f1d1d1d0b07071d1d1d1d3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b67613f1d1d1d6d6e6f1d1d1d1d6d6e2c624446654363603f1d1d1d1d3f3f1d1d1d1d3f605a7b7b7b7b58613f1d1d5d3f605a7b7b7b7b7b7b7b7b7b7b7b7b48603f1d3f3f606263603f3f605a7b7b7b7b7b7b7b67603f1d1d1d1d07071d1d1d1d3f6072504c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b67603f3f3f3f3f3f3f3f3f3f3f3f3f614a7b7b7b7b57603f1d1d1d1d3f3f1d1d1d1d3f60725456565073603f1d6f5e3f60725252754c7b7b7b7b7b7b7b7b47603f1d3f6c6c6a57603f3f604a7b7b7b7b7b7b7b67613f1d1d1d1d1b070c1d1d1d0b6b606b597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b586b606060606060707060606060706c4a7b7b7b7b67603f1d1d1d1d1d1d1d1d1d1d3f6b606060603c606c3f1d1d1d3f6b6060606b72505475525651517573603f1d3f60625c78603f3f60497b7b7b7b7b7b7b58613f1d1d1d1d1d071c1d1d1d07070761697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b5b4240444546464565434044666543425c7b7b7b7b67613f1d1d1d1d1d1d1d1d1d1d3f3f3f3f3f3f5d3f3f3f3f3f3f3f3f3f3f3f6b606060607060606070606c3f1d3f606a7b68603f3f6072535254515175527360741d1d1d1d0b070c1d1d1d1b070761697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b77603f1d1d1d1d1d1d1d1d1d1d3f3f3f3f3f4d5e3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f74743f604a7b58603f3f6b6060706060606060606c3f1d1d1d1d1b07070c1d1d1d1b0760797b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b007b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b68603f1d1d1d1d1d4d6e6e6e6f3f6c6060603b6060706060606b3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f74605a7b47613f743f3f3f3f3f3f3f3f3f3f3f3f1d1d1d1d1d0707071d1d1d1d1b606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b007b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b77603f3f3f3f3f3f5d3f3f3f3f3f6062446666416543426563603f1d1d1d3f6c60706060606060607060606060706c497b47613f3f743f3f3f74743f3f3f3f3f3f3f3f3f3f3f1b07070c3f3f1d3f60797b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b4b50535054515156755253545175504c7b7b7b7b7b786b6070606060603b60607060606c5a7b7b7b7b7b7b7b7b57603f1d6f4e3f606243444546464565434044666543405c7b476b6060606060606070606b3f3f3f6c6070606060607060606b3f1d3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b576c60706060603c6060706060606b597b7b7b7b7b5b40434445454666664165434265425c7b7b7b7b7b7b7b7b77603f1d1d6d6e2c597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b5b40424044654466654363603f6f3f61624342446665434263603f1d3f60497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b68603f3f3f3f3f3f3f3f3f74747460790000007b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b67603f3f3f3f3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b58603f5d3f614a7b7b7b4b53527573603f1d3f60725675525651515656755256515156754c7b7b7b7b7b7b7b7b7b7b7b58603f1d1d1d1d1d1d1d1d1d1d3f61690000007b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b586b60707060606c497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b486b603b606c6a7b7b7b476c6060606c3f1d3f6b6060603c60606060606060606060706b497b7b7b7b7b7b7b7b7b7b7b48613f1d1d1d1d1d1d1d1d1d1d3f61694b50755256515154535054515156755253545175504c7171710d7b7b7b5b424343404465405c7b7b7b7b7b7b7b7b7b0d7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b5b44454666655c00000057603f3f3f3f3f1d3f3f3f3f3f5d3f3f3f3f3f1d3f3f3f3f3f60597b7b7b7b7b7b7b7b7b7b7b48613f1d1d3f3f3f3f3f3f1d1d3f6079576c60706060607060706060603c6060706060606b597b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b0000000000000078603f1d1d1d3f1d3f1d1d1d3f5d3f1d1d1d3f1d3f1d1d1d3f61697b7b7b7b7b7b7b7b7b7b7b47613f1d1d3f3f3f3f3f3f1d1d3f606a78603f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f744f2e7b7b7b7b71717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b4b50505052505353504c7b7b7b7b7b7b7b48603f1d6f1d3f1d3f1d6f6e6e5e3f1d6f1d3f4d6e6e6f1d3f61697b7b7b7b7b7b7b7b7b7b7b58603f1d1d3f741d1d1d3f1d1d3f607958603f1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d3f2f2f7b7b7b7b7b7b71717b7b7b7b7b7b7b7b7b0d7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b476c603c607070606b6a7b7b7b7b7b7b7b57603f1d5d1d3f1d3f1d1d1d3f1d3f1d5d1d3f5d3f1d1d1d3f60797b7b7b7b7b7b7b7b7b7b7b48613f1d1d3f74741d1d3f1d1d3f605a47603f3f3f3f3f3f3f1d1d1d3f3f3f3f3f3f1d3f2f2f7b7b0d7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b0d7b7b7b7b7b7b7b7b7b7b7b4860745d3f3f3f3f61725352545151754c78603f3f5d3f3f1d3f3f3f3f3f1d3f3f5d3f3f5d3f3f3f3f3f606a7b7b7b7b7b7b7b7b7b7b7b48613f1d1d3f1d1d1d1d3f1d1d3f607273603f3f6c60606b3f1d1d1d3f6c60606b743f3f7c3e7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b48613f5d1d1d1d3f6b6060706060606b5957603f1d5d1d1d1d1d1d1d1d1d1d1d1d5d1d1d5d1d1d1d1d3f60797b7b7b7b7b7b7b7b7b7b7b47613f1d1d3f3f3f3f3f3f1d1d3f6b60606c3f3f606263603f1d1d1d3f6062636b6060606c5a7b7b7b7b7b7b7b7b7b7b717171717171717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b000048613f5d15161d3f3f3f3f3f3f3f746169782b6e6e5e1d1d1d1d1d1d1d1d1d1d1d5d1d1d6d6e6e6e6e6e2c5a7b7b7b7b7b7b7b7b7b7b7b572b3f1d1d3f3f3f3f3f3f1d1d3f3f3f3f3f3f3f615957603f1d6f1d3f614a5b44454666655c71717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b000057603f6d25261d3f3f3f3f3f3f1d3f616968603f1d1d1d1d1d1d1d1d1d1d4d6e6e5e1d1d1d1d1d1d1d3f60597b7b7b7b7b7b7b7b7b7b7b77603f1d1d1d1d1d1d1d1d1d1d3f3f3f3f3f3f3f617978603f1d1d1d3f614a000000007b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b4b505475525651504c68603f1d1d1d1d3f6c60606b3f1d3f607958603f1d1d1d1d1d1d1d1d1d1d5d1d1d1d1d1d1d1d1d1d1d3f605a7b7b7b7b7b7b7b7b7b7b7b6761741d1d1d1d1d1d1d1d1d1d3f6c60606060606c4a77603f3f3f3f3f60597b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b0d7b7b7b7b7b7b7b717b7b7b7b7b7b486c60607060606b4968603f3f3f3f3f3f606263603f1d3f606a4761743f3f3f3f3f3f3f3f3f3f5d3f3f3f3f3f1d1d1d3f7474604a7b7b7b7b7b7b7b7b7b7b7b67603f743f743f3f3f3f3f3f3f74606244454666655c586b60706060606c5a7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b4861743f3f3f3f6049586b7070607070606c4a57603f1d3f6079476b60706060606060607060603b6070606b3f1d1d1d3f6c606c497b7b7b7b7b7b7b7b7b7b7b586b6060606060607070607070606c497b7b7b7b7b7b5b404344454546425c7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b47613f1d1d1d3f60495b40434240434343405c47603f1d3f615a5b40424344454666666543404466654363603f1d1d1d3f6062425c7b7b7b7b7b7b7b7b7b7b7b5b40424445464645654345654344655c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71717b7b7b7b7b7b7b7b0d7b7b7b7b7b714b525073603f1d6f1d3f60725350545151565575545673603f1d3f60725054565555767552565176755054505273603f1d1d1d3f614a007b7b7b7b7b7b7b7b7b7b7b7b"
-
-
+-- mission_tutorial = "4b5054565555767552565151545052534c7b7b7b7b4b50535054515156755253545175534c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b4b50505350545151567552535451754c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b576c6060603c60607060606070603c6b597b7b7b7b476c60706060603c6060706060606b497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b476c6060706060606060607060606b597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b58603f3f3f5d3f3f3f3f3f3f3f3f6d2c5a7b7b7b7b48603f3f3f3f3f5d3f3f3f3f3f3f60597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b576007071c3f3f3f3f3f3f3f747461697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b48613f6f6e5e1d1d1d1d1d1d1d1d3f60725054567573613f6f6e6e6e5e1d1d1d1d1d3f61697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b4b545675525651515675754c7b7b7b7b7b7b7b7860071c1d1d1d1d1d1d1d741d3f61697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b48613f1d1d1d1d1d1d1d1d1d6f4e3f6b6060606060606c3f1d1d1d1d1d1d1d1d1d1d3f61697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b4b53736c60607060606070606b497b7b7b7b7b7b7b68601c1d1d1d1d1d1d1d1d1d1d3f60797b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b47613f1d1d1d1d1d1d1d1d1d1d5d3f3f3f3f3f3f3f3f3f3f1d1d1d1d1d1d1d1d1d1d3f60797b7b7b7b4b505053545175534c7b7b7b7b7b7b7b7b7b7b7b7b576c606c3f3f3f3f3f3f743f60597b7b7b7b7b7b7b58603f1d1d1d1d0b070c1d1d1d3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b572b6e6e6e6e4e1d1d1d1d1d1d5d3f3f3f3f3f3f3f3f3f3f1d1d1d1d1d1d1d1d1d1d3f606a7b7b7b7b576c70706060606b597b7b7b7b7b7b7b7b7b7b7b7b5860743f1d1d3f3f3f743f3f606a7b7b7b7b7b7b7b47613f1d1d1d1d07071c1d1d1d3f60797b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b77603f1d1d1d5d1d1d1d1d1d1d5d3f6c6060607070606b3f1d1d1d1d3f3f1d1d1d1d3f60797b7b7b7b77603f3f3f5d3f606a7b7b7b7b7b7b7b7b7b7b7b7b48603f1d1d3f6c60606b3f3f606a7b7b7b7b7b7b7b57613f1d1d1d0b07071d1d1d1d3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b67613f1d1d1d6d6e6f1d1d1d1d6d6e2c624446654363603f1d1d1d1d3f3f1d1d1d1d3f605a7b7b7b7b58613f1d1d5d3f605a7b7b7b7b7b7b7b7b7b7b7b7b48603f1d3f3f606263603f3f605a7b7b7b7b7b7b7b67603f1d1d1d1d07071d1d1d1d3f6072504c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b67603f3f3f3f3f3f3f3f3f3f3f3f3f614a7b7b7b7b57603f1d1d1d1d3f3f1d1d1d1d3f60725456565073603f1d6f5e3f60725252754c7b7b7b7b7b7b7b7b47603f1d3f6c6c6a57603f3f604a7b7b7b7b7b7b7b67613f1d1d1d1d1b070c1d1d1d0b6b606b597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b586b606060606060707060606060706c4a7b7b7b7b67603f1d1d1d1d1d1d1d1d1d1d3f6b606060603c606c3f1d1d1d3f6b6060606b72505475525651517573603f1d3f60625c78603f3f60497b7b7b7b7b7b7b58613f1d1d1d1d1d071c1d1d1d07070761697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b5b4240444546464565434044666543425c7b7b7b7b67613f1d1d1d1d1d1d1d1d1d1d3f3f3f3f3f3f5d3f3f3f3f3f3f3f3f3f3f3f6b606060607060606070606c3f1d3f606a7b68603f3f6072535254515175527360741d1d1d1d0b070c1d1d1d1b070761697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b77603f1d1d1d1d1d1d1d1d1d1d3f3f3f3f3f4d5e3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f74743f604a7b58603f3f6b6060706060606060606c3f1d1d1d1d1b07070c1d1d1d1b0760797b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b007b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b68603f1d1d1d1d1d4d6e6e6e6f3f6c6060603b6060706060606b3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f74605a7b47613f743f3f3f3f3f3f3f3f3f3f3f3f1d1d1d1d1d0707071d1d1d1d1b606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b007b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b77603f3f3f3f3f3f5d3f3f3f3f3f6062446666416543426563603f1d1d1d3f6c60706060606060607060606060706c497b47613f3f743f3f3f74743f3f3f3f3f3f3f3f3f3f3f1b07070c3f3f1d3f60797b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b4b50535054515156755253545175504c7b7b7b7b7b786b6070606060603b60607060606c5a7b7b7b7b7b7b7b7b57603f1d6f4e3f606243444546464565434044666543405c7b476b6060606060606070606b3f3f3f6c6070606060607060606b3f1d3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b576c60706060603c6060706060606b597b7b7b7b7b5b40434445454666664165434265425c7b7b7b7b7b7b7b7b77603f1d1d6d6e2c597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b5b40424044654466654363603f6f3f61624342446665434263603f1d3f60497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b68603f3f3f3f3f3f3f3f3f74747460790000007b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b67603f3f3f3f3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b58603f5d3f614a7b7b7b4b53527573603f1d3f60725675525651515656755256515156754c7b7b7b7b7b7b7b7b7b7b7b58603f1d1d1d1d1d1d1d1d1d1d3f61690000007b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b586b60707060606c497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b486b603b606c6a7b7b7b476c6060606c3f1d3f6b6060603c60606060606060606060706b497b7b7b7b7b7b7b7b7b7b7b48613f1d1d1d1d1d1d1d1d1d1d3f61694b50755256515154535054515156755253545175504c7171710d7b7b7b5b424343404465405c7b7b7b7b7b7b7b7b7b0d7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b5b44454666655c00000057603f3f3f3f3f1d3f3f3f3f3f5d3f3f3f3f3f1d3f3f3f3f3f60597b7b7b7b7b7b7b7b7b7b7b48613f1d1d3f3f3f3f3f3f1d1d3f6079576c60706060607060706060603c6060706060606b597b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b0000000000000078603f1d1d1d3f1d3f1d1d1d3f5d3f1d1d1d3f1d3f1d1d1d3f61697b7b7b7b7b7b7b7b7b7b7b47613f1d1d3f3f3f3f3f3f1d1d3f606a78603f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f744f2e7b7b7b7b71717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b4b50505052505353504c7b7b7b7b7b7b7b48603f1d6f1d3f1d3f1d6f6e6e5e3f1d6f1d3f4d6e6e6f1d3f61697b7b7b7b7b7b7b7b7b7b7b58603f1d1d3f741d1d1d3f1d1d3f607958603f1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d3f2f2f7b7b7b7b7b7b71717b7b7b7b7b7b7b7b7b0d7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b476c603c607070606b6a7b7b7b7b7b7b7b57603f1d5d1d3f1d3f1d1d1d3f1d3f1d5d1d3f5d3f1d1d1d3f60797b7b7b7b7b7b7b7b7b7b7b48613f1d1d3f74741d1d3f1d1d3f605a47603f3f3f3f3f3f3f1d1d1d3f3f3f3f3f3f1d3f2f2f7b7b0d7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b0d7b7b7b7b7b7b7b7b7b7b7b4860745d3f3f3f3f61725352545151754c78603f3f5d3f3f1d3f3f3f3f3f1d3f3f5d3f3f5d3f3f3f3f3f606a7b7b7b7b7b7b7b7b7b7b7b48613f1d1d3f1d1d1d1d3f1d1d3f607273603f3f6c60606b3f1d1d1d3f6c60606b743f3f7c3e7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b48613f5d1d1d1d3f6b6060706060606b5957603f1d5d1d1d1d1d1d1d1d1d1d1d1d5d1d1d5d1d1d1d1d3f60797b7b7b7b7b7b7b7b7b7b7b47613f1d1d3f3f3f3f3f3f1d1d3f6b60606c3f3f606263603f1d1d1d3f6062636b6060606c5a7b7b7b7b7b7b7b7b7b7b717171717171717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b000048613f5d15161d3f3f3f3f3f3f3f746169782b6e6e5e1d1d1d1d1d1d1d1d1d1d1d5d1d1d6d6e6e6e6e6e2c5a7b7b7b7b7b7b7b7b7b7b7b572b3f1d1d3f3f3f3f3f3f1d1d3f3f3f3f3f3f3f615957603f1d6f1d3f614a5b44454666655c71717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b000057603f6d25261d3f3f3f3f3f3f1d3f616968603f1d1d1d1d1d1d1d1d1d1d4d6e6e5e1d1d1d1d1d1d1d3f60597b7b7b7b7b7b7b7b7b7b7b77603f1d1d1d1d1d1d1d1d1d1d3f3f3f3f3f3f3f617978603f1d1d1d3f614a000000007b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b4b505475525651504c68603f1d1d1d1d3f6c60606b3f1d3f607958603f1d1d1d1d1d1d1d1d1d1d5d1d1d1d1d1d1d1d1d1d1d3f605a7b7b7b7b7b7b7b7b7b7b7b6761741d1d1d1d1d1d1d1d1d1d3f6c60606060606c4a77603f3f3f3f3f60597b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b0d7b7b7b7b7b7b7b717b7b7b7b7b7b486c60607060606b4968603f3f3f3f3f3f606263603f1d3f606a4761743f3f3f3f3f3f3f3f3f3f5d3f3f3f3f3f1d1d1d3f7474604a7b7b7b7b7b7b7b7b7b7b7b67603f743f743f3f3f3f3f3f3f74606244454666655c586b60706060606c5a7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b4861743f3f3f3f6049586b7070607070606c4a57603f1d3f6079476b60706060606060607060603b6070606b3f1d1d1d3f6c606c497b7b7b7b7b7b7b7b7b7b7b586b6060606060607070607070606c497b7b7b7b7b7b5b404344454546425c7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b47613f1d1d1d3f60495b40434240434343405c47603f1d3f615a5b40424344454666666543404466654363603f1d1d1d3f6062425c7b7b7b7b7b7b7b7b7b7b7b5b40424445464645654345654344655c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71717b7b7b7b7b7b7b7b0d7b7b7b7b7b714b525073603f1d6f1d3f60725350545151565575545673603f1d3f60725054565555767552565176755054505273603f1d1d1d3f614a007b7b7b7b7b7b7b7b7b7b7b7b"
 
 function dist_trig(dx, dy)
   local ang = atan2(dx, dy)
@@ -119,6 +117,9 @@ function wall_collide(x, y, flag)
   return fget(mget(flr(x / 8), flr(y / 8)), flag)
 end
 
+function is_close_to(e1, e2, dist)
+  return dist_trig(e1.x - e2.x, e1.y - e2.y) <= dist
+end
 
 -- GAME
 ---------
@@ -140,7 +141,7 @@ function _init()
     [game_state.debrief] = {update = update_debrief, draw = draw_debrief}
   }
 
-  current_game_state = game_state.intro
+  current_game_state = game_state.gameplay
   intro_counter, intro_blink = 0, 0
 
   -- Mission Select
@@ -177,8 +178,8 @@ function _init()
 
   missions_entities_params = {
     { -- Tutorial
-    {5*8, 5*8, true, "Player"},
-    {5*8, 17*8, false, "Dervish"},
+    {54*8, 35*8, true, "Player"},
+    {57*8, 42*8, false, "Dervish"},
     },
     { -- Mission 1
     {22*8, 22*8, true, "Player"},
@@ -206,7 +207,7 @@ function _init()
 
   mission_laser_doors_params = {
     { -- Tutorial
-    {80*8, 31*8}, 
+    {15*8, 39*8}
     }, 
     { -- Mission 1
     {80*8, 31*8}, 
@@ -223,21 +224,21 @@ function _init()
   }
 
     tutorial_textlines = stringToTable([[
-  ⬆️⬇️⬅️➡️ move. explore around    
-  ,move away. then ❎ to shoot 
-  ,try moving to the next room
-  ,welcome to preacher protocol
-  ,shoot barrels. clear the way
-  ,shooting consumes energy 
-  ,some barrels release waste
-  ,watch out for toxic waste
-  ,🅾️ rotate ability 
-  ,pulse strike: fast/weak
-  ,impact strike: slow/strong
-  ,regen: restores health
-  ,defeat enemy to end tutorial
-  ,energy drains when outside
-  ,use switch to open laser door|
+⬆️⬇️⬅️➡️ move. explore around   
+,move away. then ❎ to shoot 
+,try moving to the next room
+,shoot barrels. clear the way
+,welcome to preacher protocol
+,some barrels release waste
+,shooting consumes energy
+,watch out for toxic waste 
+,impact strike: slow/strong
+,pulse strike: fast/weak
+,🅾️ rotate ability
+,regen: restores health
+,use switch to open laser door
+,defeat enemy to end tutorial
+,energy drains when outside|
     ]])[1]
 
   mission_interfaces_textlines = {
@@ -252,8 +253,7 @@ function _init()
 
     },
     { -- Mission 4
-
-    },
+     },
   }
 
 
@@ -312,7 +312,7 @@ function _init()
   player_position = {x = 0, y = 0}
   swap_palette = stats[7]
   swap_palette_dark = stats[8]
-  -- load_entities()
+  load_entities()
 end
 
 
@@ -329,6 +329,19 @@ function _draw()
 end
 
 
+function display_logo(x_preacher, x_protocol, y_preacher, y_protocol)
+  spr(224, x_preacher, y_preacher, 1, 2)
+  spr(225, x_preacher + 9, y_preacher, 1, 2)
+  spr(233, x_preacher + 18, y_preacher, 7, 2)
+
+  spr(224, x_protocol, 11, y_protocol + 1, 2)
+  spr(225, x_protocol + 9, y_protocol + 11, 1, 2)
+  spr(226, x_protocol + 18, y_protocol + 11, 7, 2)
+end
+
+
+
+
 -- INTRO
 ---------
 function draw_intro()
@@ -342,9 +355,8 @@ function draw_intro()
 
   local x_preacher = min(15, -50 + intro_counter * 3)
   local x_protocol = max(45, 128 - intro_counter * 3)
-
-  spr(192, x_preacher, 0, 9, 2)
-  spr(224, x_protocol, 11, 9, 2)
+ 
+  display_logo(x_preacher, x_protocol, 0, 0)
 
   if x_preacher == 10 and not sfx_played_preacher then
     sfx(20)
@@ -383,8 +395,7 @@ function draw_mission_select()
   map(0, 0, 0, 0, 128, 48)
   draw_shadow(-20,-20, 10, swap_palette_dark)
 
-  spr(192, cam.x + 15, cam.y + 0, 9, 2)
-  spr(224, cam.x + 45, cam.y + 11, 9, 2)
+  display_logo(cam.x + 15, cam.x + 45, cam.y, cam.y)
 
   for i, panel in ipairs(level_select_text_panels) do
     panel.selected = (i == selected_mission)
@@ -729,8 +740,7 @@ end
 
 
 function load_entities()
-  printh('nowasdasdasdasdasd')
-  copy_map_into_memory(mission_tutorial)
+  -- copy_map_into_memory(mission_tutorial)
 
   entities = {}
   for params in all(missions_entities_params[selected_mission]) do
@@ -778,7 +788,8 @@ function load_entities()
 
   -- debrief
   debrief_counter = 0
-  display_stage = 1 
+  display_stage = 1
+  total_enemies = #entities - 1
   enemies_killed = 0
 end
 
@@ -786,7 +797,6 @@ end
 -- GAMEPLAY
 ------------------
 function update_gameplay()
-
   local all_entities = {
     entities, projectiles, particles, emitters, 
     laser_doors, barrels, interfaces, {cam, player_hud}
@@ -803,7 +813,7 @@ end
 
 function draw_gameplay()
   reset_palette_and_transparency(true)
-  map(0, 0, 0, 0, 128, 48)
+  map(0, 0, 0, 0, 128, 56)
 
   foreach(entities, function(e) e:draw_underlay() end)
 
@@ -816,7 +826,7 @@ function draw_gameplay()
     player_position.x, player_position.y = player.x, player.y
   end
   
-  map(0, 0, 0, 0, 128, 128, 2)
+  map(0, 0, 0, 0, 128, 56, 2)
   foreach(entities, function(e) e:draw_overlay() end)
   foreach(laser_doors, function(l) l:draw() end)
   foreach(particles, function(p) p:draw() end)
@@ -899,8 +909,7 @@ function projectile:spawn_particles(count, bounce)
       p_vx, p_vy = -p_vx, -p_vy
     end
     
-    local p = particle:new(self.x, self.y, p_vx, p_vy, 15 + rnd(10), 0)
-    add(particles, p)
+    add(particles, particle:new(self.x, self.y, p_vx, p_vy, 15 + rnd(10), 0))
   end
 end
 
@@ -909,25 +918,17 @@ function projectile:check_entity_collision()
   local steps = max(abs(self.vx), abs(self.vy))
   local step_x, step_y = sgn(self.vx), sgn(self.vy)  
   for i = 1, steps do
-    local check_x = self.x + (i * step_x)
-    local check_y = self.y + (i * step_y)
-
-    for e in all(entities) do
-      if e != self.creator then
-        if check_x < e.x + e.width and e.x < check_x + 1 and 
+    local check_x, check_y = self.x + (i * step_x), self.y + (i * step_y)
+    for group in all({entities, barrels}) do
+      for e in all(group) do
+        if e != self.creator and 
+            check_x < e.x + e.width and e.x < check_x + 1 and 
             check_y < e.y + e.height and e.y < check_y + 1 then
           return true, e
         end
       end
     end
-    for e in all(barrels) do 
-      if check_x < e.x + e.width and e.x < check_x + 1 and 
-        check_y < e.y + e.height and e.y < check_y + 1 then
-        return true, e
-      end
-    end
   end
-
   return false, nil
 end
 
@@ -935,13 +936,11 @@ end
 function projectile:check_wall_collision()
   local steps = max(abs(self.vx), abs(self.vy))
   local step_x, step_y = sgn(self.vx), sgn(self.vy)
-
   for i = 1, steps do
     if wall_collide(self.x + (i * step_x), self.y + (i * step_y)) then
       return true
     end
   end
-
   return false
 end
 
@@ -1245,8 +1244,7 @@ end
 
 
 function entity:inflict_damage(damage)
-  self.health = max(0, self.health - damage)
-  self.hit_flash_timer = 1
+  self.health, self.hit_flash_timer = max(0, self.health - damage), 1
   
   damage_text = {
     x = self.x + 4, 
@@ -1285,6 +1283,7 @@ function entity:process_death_conditions()
   if self.health == 0 then
     spawn_death_particles(self.x, self.y)
     del(entities, self)
+    enemies_killed += 1
   end
 end
 
@@ -1321,6 +1320,7 @@ end
 function entity:ai_behavior()
   local player = get_controlled_entity()
   local can_see_player = self:can_see(player)
+  -- printh(can_see_player)
   if can_see_player then self.target = {x = player.x, y = player.y} end
   self.state_actions[self.current_state](self, can_see_player)
 end
@@ -1331,31 +1331,6 @@ function entity:idle_behavior(can_see_player)
     self.current_state = enemy_state.alert
   end
 end
-
-
--- function entity:patrol_behavior(can_see_player)
---   if can_see_player then
---     self.current_state = enemy_state.alert
---   end
-  
-
---   printh(sin(self.patrol_angle))
---   printh(cos(self.patrol_angle))
-
---   local next_x, next_y = self.x + sin(self.patrol_angle) * 3, self.y + cos(self.patrol_angle)
-
---   if wall_collide(next_x, next_y) or
---     wall_collide(next_x + self.width - 1, next_y) or
---     wall_collide(next_x, next_y + self.height - 1) or
---     wall_collide(next_x + self.width - 1, next_y + self.height - 1) then
-
---     self.patrol_angle = (self.patrol_angle + .5) % 1
---   else
---     self.target.x, self.target.y = next_x, next_y
---   end
-  
---   self:move_towards_target_unless_close(0)
--- end
 
 
 function entity:search_behavior(can_see_player)
@@ -1372,7 +1347,7 @@ end
 
 
 function entity:move_towards_target_unless_close(distance)
-  if not self:is_close_to_target(distance) then
+  if not is_close_to(self, self.target, distance) then
     local angle = atan2(self.target.x - self.x, self.target.y - self.y)
     self.ax = cos(angle) * self.acceleration * 0.7
     self.ay = sin(angle) * self.acceleration * 0.7
@@ -1394,13 +1369,13 @@ end
 
 function entity:alert_behavior(can_see_player)
   if can_see_player then
-    if not self:is_close_to_target(50) then
+    if not is_close_to(self, self.target, 50) then
       self:move_towards_target_unless_close(0)
     else
       self.current_state = enemy_state.attack
     end
   else
-    if self:is_close_to_target(1) then 
+    if is_close_to(self, self.target, 1) then 
       self.current_state = enemy_state.search
     end
     self:move_towards_target_unless_close(1)
@@ -1409,7 +1384,7 @@ end
 
 
 function entity:attack_behavior(can_see_player)
-  if not can_see_player or not self:is_close_to_target(50) then
+  if not can_see_player or not is_close_to(self, self.target, 50) then
     self.current_state = enemy_state.alert
   else
     self.ability_actions[self.current_ability_index].action(self)
@@ -1441,15 +1416,11 @@ function entity:move_target_randomly()
 end
 
 
-function entity:is_close_to_target(dist)
-  local distance_to_target = dist_trig(self.x - self.target.x, self.y - self.target.y)
-  return distance_to_target <= dist
-end
+
 
 
 function entity:can_see(target)
   if not target then return false end
-
   local corners = {
     {dx = 0, dy = 0}, -- Top-left corner
     {dx = self.width - 1, dy = 0}, -- Top-right corner
@@ -1488,8 +1459,7 @@ function entity:apply_physics()
   self.vx = (self.vx + self.ax / self.mass) * f
   self.vy = (self.vy + self.ay / self.mass) * f
 
-  local max_velocity = 4
-  local threshold = 0.1
+  local max_velocity, threshold = 4, 0.1
   dist = dist_trig(self.vx, self.vy)
   if dist > max_velocity then
     local scale = max_velocity / dist
@@ -1499,10 +1469,8 @@ function entity:apply_physics()
   end
 
   local function apply_force(other)
-    local force_x = self.vx / self.mass
-    local force_y = self.vy / self.mass
-    other.vx = other.vx + force_x * other.mass
-    other.vy = other.vy + force_y * other.mass
+    local force_x, force_y = self.vx / self.mass, self.vy / self.mass
+    other.vx, other.vy = other.vx + force_x * other.mass, other.vy + force_y * other.mass
   end
 
   local function check_collision(next_x, next_y)
@@ -1513,21 +1481,6 @@ function entity:apply_physics()
         wall_collide(next_x + self.width - 1, next_y + self.height - 1) then
       return true
     end
-
-    -- Check collision with other entities
-    if not self.flying then
-      for other in all(entities) do
-        if other ~= self and check_entity_collision(
-            next_x, next_y, 
-            self.width - 1, self.height - 1, 
-            other.x, other.y, 
-            other.width - 1, other.height - 1) then
-            apply_force(other)
-          return true
-        end
-      end
-    end
-
 
     -- Check Laser Door collision
     for laser_door in all(laser_doors) do
@@ -1581,12 +1534,11 @@ function entity:handle_input()
   if btn(➡️) then ax += self.acceleration end -- right
   if btn(⬆️) then ay -= self.acceleration end -- up
   if btn(⬇️) then ay += self.acceleration end -- down
-
-
+  
   local close_to_emitter, active_emitter = false, nil
   for emitter in all(emitters) do
     if emitter.current_height != emitter.max_height and
-       emitter.attract_distance > dist_trig(self.x - emitter.x, self.y - emitter.y) then
+      is_close_to(self, emitter, emitter.attract_distance) then
       close_to_emitter = true
       active_emitter = emitter
       break
@@ -1595,7 +1547,7 @@ function entity:handle_input()
 
   local close_to_interface, active_interface = false, nil
   for interface in all(interfaces) do
-    if interface.attract_distance > dist_trig(self.x - interface.x, self.y - interface.y) then
+    if is_close_to(self, interface, interface.attract_distance) then
       close_to_interface = true
       active_interface = interface
       active_interface.active = false
@@ -1633,8 +1585,7 @@ end
 
 
 function entity:cycle_ability()
-  player_hud.ammo_panel.moving_left = true
-  player_hud.ability_panel.moving_left = true
+  player_hud.ammo_panel.moving_left, player_hud.ability_panel.moving_left = true, true
 
   self.current_ability_index += 1
   if self.current_ability_index > #self.ability_actions then
@@ -1655,8 +1606,7 @@ end
 
 function entity:draw()
   local velocity_magnitude = sqrt(self.vx * self.vx + self.vy * self.vy)
-  local threshold = 0.1
-  local frames = velocity_magnitude > threshold and self.move_frames or self.idle_frames
+  local frames = velocity_magnitude > 0.1 and self.move_frames or self.idle_frames
   frame_duration = frames["duration"]
 
   local cos_val, sin_val = cos(self.facing_angle), sin(self.facing_angle)
@@ -1821,9 +1771,8 @@ laser_door = {}
 laser_door.__index = laser_door
 function laser_door:new(x, y)
   local self = setmetatable({}, laser_door)
-  self.x, self.y = x, y
+  self.x, self.y, self.end_y = x, y, y + 16
   self.active = true
-  self.end_y = self.y + 16
 
   while not wall_collide(self.x + 7, self.end_y) do
     self.end_y += 1
@@ -2159,106 +2108,106 @@ eeeeeeeeeeeeeeeeeeeeeeeeeee3333eeeeeeeeeeeeeeeeeeeeeeeeee6655555eeee11555555566e
 55353533e111555e55155555555551551112222255555555eeee1111eeeee111eeeee115111eeeee1ddd22d2000000005555511dd11555556666077666007076
 53353535e111555e51555555555555151112222255555555ee111155eeeeee11eeee115511eeeeee11dddd220000000055555511115555556666670666600006
 33333535ee1155ee1555555555555551611222265555555511115555eeeeee11eeee115511eeeeee111222220000000055555551155555556666606666666666
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b775c606
-06c6f3d1d1d1f3b6060607060606060606060606c6f3d1f3b60606060606c30606070606060706c306c306c6f3d1d1d1f316a400b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7d0b7b7b7b7171717171717b7b7b7b7b7b7b7b7d2f5f3
-f3f3f3d1d1d1f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f31694b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7f2f2f3
-d1d1d1d1d1d1d1d1d1d1d1d1f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f347470694b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7f2f2f3
-d1d1d1d1d1d1d1d1d1d1d1d1f3c60606060606b6f3d1d1d1f3c60606070606060606060706060606060606070606060707c694b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7d0b7b7b7b717b7b7b7b7b7d3d7f3
-f3f3f3f3f3f3f3f3f3f3f3474706264456243606f3d1f6d1f306262434445464645456340444546466545634044466562404c5b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b785b606
-06060606060607070606060607c694b7b7007506f3d1d1d1f316a4b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b70000b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717171717b50404
-0444546464545634044466563404c5b7b7b78706f3f3f3f3f306a4b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b70000b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b78606f3f3f3f3f3f3f3d5f306a600b7b7b7b7b7b7b7b7b7b7b7b4055725651515453505451515655725156557254515156557253545155705c4
 b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b785b60606060607c694b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b70000b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7d0b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b504244466563404c5b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b70000b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7d0b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b70000b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b78606f3f3f3f3d1d1d1d5f306a500b7b7b7b7b7b7b7b7b7b7b775c60607060606070607060606c3060606c30606060606c3060607060606b695
 b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b70000b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b785b60606b6f3d1d1f6e5f316a400b7b7171717171717b7b7b78706f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f34747470697
 b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b70000b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b504043606f3d1d1d1d1f316a400b717b7b7b7b7b7b717b7b78506f3d1d1d1d1d1d1d1d1d1f3f3f3f3f3f3f3d1d1d1d1d1d1d1d1d1d1f31696
 b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b70000
+b40505052505353505c47406f3f3f3f3f3f306950017b7b7b7b7b7b7b7b7b4053706f3f3f3f3f3f3f3d1d1d1f3c6060606b6f3d1d1d1d1d1d1d1d1d1d1f31696
 b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b70000
+74c606c306070706b6a67406f3f3c6070606c6a517b7b7b7b7b7b7b7b7b777c606c6f3f3c60606b6f3d1d1d1f306262436b6f3d1d1f3f3f3f3f3f3d1d1f30697
 b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b70000
+840647d5f3f3f3f316273706f3f30626446424c517b7b7b7b7b7b7b7b7b7d2f5f3f3f3f306263606f3d1f6d1f316a4b77406f3d1d1f3f3f3f3f3f3d1d1f306a6
 b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7000000b7b7b7b7b7b7b7b70000
-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeb7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeb7b7b7b7b7b7b7b7b7b7b7b7b7b7b700000000000000000000000000
-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeb7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeb7b7b7b7b7b7b7b7b7b7b7b7b7b7b700000000000000000000000000
-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee3eeeeeeeeeeeeeeeeeeb7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee33eeeeeeeeeeeeeeeeeeb7b7b7b7b7b7b7b7b7b7b7b7b7b7b700000000000000000000000000
-33333333e33333333e33333333e33eeeeeeee33333333e33eeee33e33333333e33333333b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-33333333e33333333e33333333e333eeeeeee33333333e33eeee33e33333333e33333333b7b7b7b7b7b7b7b7b7b7b7b7b7b7b700000000000000000000000000
-eeeeee33eeeeeee33eeeeeeeeee3333eeeeee33eeeeeee33eeee33eeeeeeeeeeeeeeee3300000000000000000000000000000000000000000000000000000000
-33333333e33333333e33333333e33333eeeee33eeeeeee33333333e33333333e33333333b7b7b7b7b7b7b7b7b7b7b7b7b7b7b700000000000000000000000000
-33333333e33333333e33333333e33e333eeee33eeeeeee33333333e33333333e3333333300000000000000000000000000000000000000000000000000000000
-33eeeeeee33e333eeeeeeeeeeee33ee333eee33eeeeeee33eeee33eeeeeeeeee33e333eeb7b7b7b7b7b7b7b7b7b7b7b7b7b7b700000000000000000000000000
-33eeeeeee33ee333ee33333333e33eee333ee33333333e33eeee33e33333333e33ee333e00000000000000000000000000000000000000000000000000000000
-33eeeeeee33eee333e33333333e33eeee333e33333333e33eeee33e33333333e33eee333b7b7b7b7b7b7b7b7b7b7b7b7b7b7b700000000000000000000000000
-33eeeeeeeeeeeee33eeeeeeeeeeeeeeeeeeeeeeeeeeeee33eeeeeeeeeeeeeeeeeeeeee3300000000000000000000000000000000000000000000000000000000
-3eeeeeeeeeeeeeee3eeeeeeeeeeeeeeeeeeeeeeeeeeeee3eeeeeeeeeeeeeeeeeeeeeeee3b7b7b7b7b7b7b7b7b7b7b7b7b7b7b700000000000000000000000000
-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee00000000000000000000000000000000000000000000000000000000
-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeb7b7b7b7b7b7b7b7b7b7b7b7b7b7b700000000000000000000000000
-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee00000000000000000000000000000000000000000000000000000000
-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeb7b7b7b7b7b7b7b7b7b7b7b7b7b7b700000000000000000000000000
-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee00000000000000000000000000000000000000000000000000000000
-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee00000000000000000000000000000000000000000000000000000000
-33333333e33333333e33333333e33333333e33333333e33333333e33333333ee33eeeeee00000000000000000000000000000000000000000000000000000000
-33333333e33333333e33333333e33333333e33333333e33333333e33333333ee33eeeeee00000000000000000000000000000000000000000000000000000000
-eeeeee33eeeeeee33e33eeee33eeee33eeee33eeee33e33eeeeeee33eeee33ee33eeeeee00000000000000000000000000000000000000000000000000000000
-33333333e33333333e33eeee33eeee33eeee33eeee33e33eeeeeee33eeee33ee33eeeeee00000000000000000000000000000000000000000000000000000000
-33333333e33333333e33eeee33eeee33eeee33eeee33e33eeeeeee33eeee33ee33eeeeee00000000000000000000000000000000000000000000000000000000
-33eeeeeee33e333eee33eeee33eeee33eeee33eeee33e33eeeeeee33eeee33ee33eeeeee00000000000000000000000000000000000000000000000000000000
-33eeeeeee33ee333ee33333333eeee33eeee33333333e33333333e33333333ee3333333300000000000000000000000000000000000000000000000000000000
-33eeeeeee33eee333e33333333eeee33eeee33333333e33333333e33333333ee3333333300000000000000000000000000000000000000000000000000000000
-33eeeeeeeeeeeee33eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee00000000000000000000000000000000000000000000000000000000
-3eeeeeeeeeeeeeee3eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee00000000000000000000000000000000000000000000000000000000
+8416f3d5d1d1d1f3b60606c6f3f30627455745656535c4b7b7b7b7b7b7b7f2f2d1d1d1f316957506f3d1d1d1f316a4b77406f3d1d1f347d1d1d1f3d1d1f30697
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+8416f3d55161d1f3f3f3f3f3f3f3b6060606060606b695b7b7b7b7b7b7b7f2f2d1d1d1f306958706f3f3f3f3f316a4008416f3d1d1f34747d1d1f3d1d1f306a5
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7506f3d65262d1f3f3f3f3f3f3f3f3f3f3f3f3f3f306a6b7b7b7b7b7b7b7d3d7f3f3f3f3169785b60607060606c6a5b78416f3d1d1f3d1d1d1d1f3d1d1f31696
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+8606f3d1d1d1d1f3c60606b6f3f3f3f3f3f3f3f3f306a5b7b7b7b7b7b7b785b606060606c6a4b504344454546424c5b77416f3d1d1f3f3f3f3f3f3d1d1f31696
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+8606f3f3f3f3f3f3062636b6060606060606b6f3f30695b7b7b7b7b7b7b7b5044454646656c5b7b7b7b7b7b7b7b7b7b775b2f3d1d1f3f3f3f3f3f3d1d1f30697
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+85b6070706070706c6a4b54454565656043606f3f306a6b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b77706f3d1d1d1d1d1d1d1d1d1d1f306a6
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b50434240434343424c5b70000b40505253706f3f306a6b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7761647d1d1d1d1d1d1d1d1d1d1f30697
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b7000074c6060607c6f3f306a5b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b77606f347f347f3f3f3f3f3f3f34706a5
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b700007406f3f3f3f3f3f30694b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b785b6060606060606070706070706c694
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b700007406f3d1d1d1f3f306270535155705c4b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b50424445464645456345456344456c5
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b700007406f3d1f6d1f3f3b60706070606b695b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b700007506f3d1d1d1f3f3f3f3f3f3f347f4e2b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b700008706f3f3f3f3f3f3d1d1d1d1d1d1f2f2b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b7000085b6060706b6f3f3d1d1d1d1d1d1f2f2b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b70000b50434443606f3f3f3f3f3f3f3f3c7e3b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b700b7b7b7b70085b60707060606060707c6a5b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b700b7b7b7b700b504342466446656343456c5171717171717171717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee3eeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee33eeeeeeeeeeeeeeeeeeee
+333333333333333333333333e33333333e33333333e33333333e33333333ee33eeeeeeee33333333e33eeeeeeee33333333e33eeee33e33333333e33333333ee
+333333333333333333333333e33333333e33333333e33333333e33333333ee33eeeeeeee33333333e333eeeeeee33333333e33eeee33e33333333e33333333ee
+eeeeee33eeeeee3333eeee33eeee33eeee33eeee33e33eeeeeee33eeee33ee33eeeeeeeeeeeeeeeee3333eeeeee33eeeeeee33eeee33eeeeeeeeeeeeeeee33ee
+333333333333333333eeee33eeee33eeee33eeee33e33eeeeeee33eeee33ee33eeeeeeee33333333e33333eeeee33eeeeeee33333333e33333333e33333333ee
+333333333333333333eeee33eeee33eeee33eeee33e33eeeeeee33eeee33ee33eeeeeeee33333333e33e333eeee33eeeeeee33333333e33333333e33333333ee
+33eeeeee33e333ee33eeee33eeee33eeee33eeee33e33eeeeeee33eeee33ee33eeeeeeeeeeeeeeeee33ee333eee33eeeeeee33eeee33eeeeeeeeee33e333eeee
+33eeeeee33ee333e33333333eeee33eeee33333333e33333333e33333333ee33333333ee33333333e33eee333ee33333333e33eeee33e33333333e33ee333eee
+33eeeeee33eee33333333333eeee33eeee33333333e33333333e33333333ee33333333ee33333333e33eeee333e33333333e33eeee33e33333333e33eee333ee
+33eeeeeeeeeeee33eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee33eeeeeeeeeeeeeeeeeeeeee33ee
+3eeeeeeeeeeeeee3eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee3eeeeeeeeeeeeeeeeeeeeeeee3ee
 __gff__
 0000000000000004000004040400000000000000000101000000400404000000000000000001814100000001010808080000000000000000000000010108080002020202020202020202020202000001020202020202020202020202020000010101020201020202020202010100002101010202410202020202010801010000
 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 __map__
-4b5054565555767552565151545052534c7b7b7b7b4b50535054515156755253545175534c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b4b50505350545151567552535451754c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-576c6060603c60607060606070603c6b597b7b7b7b476c60706060603c6060706060606b497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b476c6060706060606060607060606b597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-58603f3f3f5d3f3f3f3f3f3f3f3f6d2c5a7b7b7b7b48603f3f3f3f3f5d3f3f3f3f3f3f60597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b576007071c3f3f3f3f3f3f3f747461697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-48613f6f6e5e1d1d1d1d1d1d1d1d3f60725054567573613f6f6e6e6e5e1d1d1d1d1d3f61697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b4b545675525651515675754c7b7b7b7b7b7b7b7860071c1d1d1d1d1d1d1d741d3f61697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-48613f1d1d1d1d1d1d1d1d1d6f4e3f6b6060606060606c3f1d1d1d1d1d1d1d1d1d1d3f61697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b4b53736c60607060606070606b497b7b7b7b7b7b7b68601c1d1d1d1d1d1d1d1d1d1d3f60797b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-47613f1d1d1d1d1d1d1d1d1d1d5d3f3f3f3f3f3f3f3f3f3f1d1d1d1d1d1d1d1d1d1d3f60797b7b7b7b4b505053545175534c7b7b7b7b7b7b7b7b7b7b7b7b576c606c3f3f3f3f3f3f743f60597b7b7b7b7b7b7b58603f1d1d1d1d0b070c1d1d1d3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-572b6e6e6e6e4e1d1d1d1d1d1d5d3f3f3f3f3f3f3f3f3f3f1d1d1d1d1d1d1d1d1d1d3f606a7b7b7b7b576c70706060606b597b7b7b7b7b7b7b7b7b7b7b7b5860743f1d1d3f3f3f743f3f606a7b7b7b7b7b7b7b47613f1d1d1d1d07071c1d1d1d3f60797b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-77603f1d1d1d5d1d1d1d1d1d1d5d3f6c6060607070606b3f1d1d1d1d3f3f1d1d1d1d3f60797b7b7b7b77603f3f3f5d3f606a7b7b7b7b7b7b7b7b7b7b7b7b48603f1d1d3f6c60606b3f3f606a7b7b7b7b7b7b7b57613f1d1d1d0b07071d1d1d1d3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-67613f1d1d1d6d6e6f1d1d1d1d6d6e2c624446654363603f1d1d1d1d3f3f1d1d1d1d3f605a7b7b7b7b58613f1d1d5d3f605a7b7b7b7b7b7b7b7b7b7b7b7b48603f1d3f3f606263603f3f605a7b7b7b7b7b7b7b67603f1d1d1d1d07071d1d1d1d3f6072504c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-67603f3f3f3f3f3f3f3f3f3f3f3f3f614a7b7b7b7b57603f1d1d1d1d3f3f1d1d1d1d3f60725456565073603f1d6f5e3f60725252754c7b7b7b7b7b7b7b7b47603f1d3f6c6c6a57603f3f604a7b7b7b7b7b7b7b67613f1d1d1d1d1b070c1d1d1d0b6b606b597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-586b606060606060707060606060706c4a7b7b7b7b67603f1d1d1d1d1d1d1d1d1d1d3f6b606060603c606c3f1d1d1d3f6b6060606b72505475525651517573603f1d3f60625c78603f3f60497b7b7b7b7b7b7b58613f1d1d1d1d1d071c1d1d1d07070761697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-5b4240444546464565434044666543425c7b7b7b7b67613f1d1d1d1d1d1d1d1d1d1d3f3f3f3f3f3f5d3f3f3f3f3f3f3f3f3f3f3f6b606060607060606070606c3f1d3f606a7b68603f3f6072535254515175527360741d1d1d1d0b070c1d1d1d1b070761697b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b77603f1d1d1d1d1d1d1d1d1d1d3f3f3f3f3f4d5e3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f74743f604a7b58603f3f6b6060706060606060606c3f1d1d1d1d1b07070c1d1d1d1b0760797b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-007b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b68603f1d1d1d1d1d4d6e6e6e6f3f6c6060603b6060706060606b3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f74605a7b47613f743f3f3f3f3f3f3f3f3f3f3f3f1d1d1d1d1d0707071d1d1d1d1b606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-007b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b77603f3f3f3f3f3f5d3f3f3f3f3f6062446666416543426563603f1d1d1d3f6c60706060606060607060606060706c497b47613f3f743f3f3f74743f3f3f3f3f3f3f3f3f3f3f1b07070c3f3f1d3f60797b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-4b50535054515156755253545175504c7b7b7b7b7b786b6070606060603b60607060606c5a7b7b7b7b7b7b7b7b57603f1d6f4e3f606243444546464565434044666543405c7b476b6060606060606070606b3f3f3f6c6070606060607060606b3f1d3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-576c60706060603c6060706060606b597b7b7b7b7b5b40434445454666664165434265425c7b7b7b7b7b7b7b7b77603f1d1d6d6e2c597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b5b40424044654466654363603f6f3f61624342446665434263603f1d3f60497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-68603f3f3f3f3f3f3f3f3f74747460790000007b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b67603f3f3f3f3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b58603f5d3f614a7b7b7b4b53527573603f1d3f60725675525651515656755256515156754c7b7b7b7b7b7b7b7b7b7b7b
-58603f1d1d1d1d1d1d1d1d1d1d3f61690000007b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b586b60707060606c497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b486b603b606c6a7b7b7b476c6060606c3f1d3f6b6060603c60606060606060606060706b497b7b7b7b7b7b7b7b7b7b7b
-48613f1d1d1d1d1d1d1d1d1d1d3f61694b50755256515154535054515156755253545175504c7171710d7b7b7b5b424343404465405c7b7b7b7b7b7b7b7b7b0d7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b5b44454666655c00000057603f3f3f3f3f1d3f3f3f3f3f5d3f3f3f3f3f1d3f3f3f3f3f60597b7b7b7b7b7b7b7b7b7b7b
-48613f1d1d3f3f3f3f3f3f1d1d3f6079576c60706060607060706060603c6060706060606b597b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b0000000000000078603f1d1d1d3f1d3f1d1d1d3f5d3f1d1d1d3f1d3f1d1d1d3f61697b7b7b7b7b7b7b7b7b7b7b
-47613f1d1d3f3f3f3f3f3f1d1d3f606a78603f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f744f2e7b7b7b7b71717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b4b50505052505353504c7b7b7b7b7b7b7b48603f1d6f1d3f1d3f1d6f6e6e5e3f1d6f1d3f4d6e6e6f1d3f61697b7b7b7b7b7b7b7b7b7b7b
-58603f1d1d3f741d1d1d3f1d1d3f607958603f1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d3f2f2f7b7b7b7b7b7b71717b7b7b7b7b7b7b7b7b0d7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b476c603c607070606b6a7b7b7b7b7b7b7b57603f1d5d1d3f1d3f1d1d1d3f1d3f1d5d1d3f5d3f1d1d1d3f60797b7b7b7b7b7b7b7b7b7b7b
-48613f1d1d3f74741d1d3f1d1d3f605a47603f3f3f3f3f3f3f1d1d1d3f3f3f3f3f3f1d3f2f2f7b7b0d7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b0d7b7b7b7b7b7b7b7b7b7b7b4860745d3f3f3f3f61725352545151754c78603f3f5d3f3f1d3f3f3f3f3f1d3f3f5d3f3f5d3f3f3f3f3f606a7b7b7b7b7b7b7b7b7b7b7b
-48613f1d1d3f1d1d1d1d3f1d1d3f607273603f3f6c60606b3f1d1d1d3f6c60606b743f3f7c3e7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b48613f5d1d1d1d3f6b6060706060606b5957603f1d5d1d1d1d1d1d1d1d1d1d1d1d5d1d1d5d1d1d1d1d3f60797b7b7b7b7b7b7b7b7b7b7b
-47613f1d1d3f3f3f3f3f3f1d1d3f6b60606c3f3f606263603f1d1d1d3f6062636b6060606c5a7b7b7b7b7b7b7b7b7b7b717171717171717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b000048613f5d15161d3f3f3f3f3f3f3f746169782b6e6e5e1d1d1d1d1d1d1d1d1d1d1d5d1d1d6d6e6e6e6e6e2c5a7b7b7b7b7b7b7b7b7b7b7b
-572b3f1d1d3f3f3f3f3f3f1d1d3f3f3f3f3f3f3f615957603f1d6f1d3f614a5b44454666655c71717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b000057603f6d25261d3f3f3f3f3f3f1d3f616968603f1d1d1d1d1d1d1d1d1d1d4d6e6e5e1d1d1d1d1d1d1d3f60597b7b7b7b7b7b7b7b7b7b7b
-77603f1d1d1d1d1d1d1d1d1d1d3f3f3f3f3f3f3f617978603f1d1d1d3f614a000000007b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b4b505475525651504c68603f1d1d1d1d3f6c60606b3f1d3f607958603f1d1d1d1d1d1d1d1d1d1d5d1d1d1d1d1d1d1d1d1d1d3f605a7b7b7b7b7b7b7b7b7b7b7b
-6761741d1d1d1d1d1d1d1d1d1d3f6c60606060606c4a77603f3f3f3f3f60597b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b0d7b7b7b7b7b7b7b717b7b7b7b7b7b486c60607060606b4968603f3f3f3f3f3f606263603f1d3f606a4761743f3f3f3f3f3f3f3f3f3f5d3f3f3f3f3f1d1d1d3f7474604a7b7b7b7b7b7b7b7b7b7b7b
-67603f743f743f3f3f3f3f3f3f74606244454666655c586b60706060606c5a7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b4861743f3f3f3f6049586b7070607070606c4a57603f1d3f6079476b60706060606060607060603b6070606b3f1d1d1d3f6c606c497b7b7b7b7b7b7b7b7b7b7b
-586b6060606060607070607070606c497b7b7b7b7b7b5b404344454546425c7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b47613f1d1d1d3f60495b40434240434343405c47603f1d3f615a5b40424344454666666543404466654363603f1d1d1d3f6062425c7b7b7b7b7b7b7b7b7b7b7b
-5b40424445464645654345654344655c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71717b7b7b7b7b7b7b7b0d7b7b7b7b7b714b525073603f1d6f1d3f60725350545151565575545673603f1d3f60725054565555767552565176755054505273603f1d1d1d3f614a007b7b7b7b7b7b7b7b7b7b7b7b
+4b5054565555767552565151545052534c7b7b7b004b50535054515156755253545175534c7b7b7b7b4b505053545175534c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b00
+576c6060603c60607060606070603c6b597b7b7b00476c60706060603c6060706060606b497b7b7b7b576c70706060606b597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b00
+58603f3f3f5d3f3f3f3f3f3f3f3f6d2c5a7b7b7b0048603f3f3f3f3f5d3f3f3f3f3f3f60597b7b7b7b77603f3f3f5d3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b00
+48613f6f6e5e1d1d1d1d1d1d1d1d3f60725456757573613f6f6e6e6e5e1d1d1d1d1d3f61697b7b7b7b58613f1d1d5d3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b00
+48613f1d1d1d1d1d1d1d1d1d6f4e3f6b6060606060606c3f1d1d1d1d1d1d1d1d1d1d3f60725456565073603f1d6f5e3f6072525252754c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+47613f1d1d1d1d1d1d1d1d1d1d5d3f3f3f3f3f3f3f3f3f3f1d1d1d1d1d1d1d1d1d1d3f6b606060603c606c3f1d1d1d3f6b606060606b72757551515675754c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+572b6e6e6e6e4e1d1d1d1d1d1d5d3f3f3f3f3f3f3f3f3f3f1d1d1d1d1d1d1d1d1d1d3f3f3f3f3f3f5d3f3f3f3f3f3f3f3f3f3f3f3f6b607070606070606b497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+77603f1d1d1d5d1d1d1d1d1d1d5d3f6c6060707070606b3f1d1d1d1d3f3f1d1d1d1d3f3f3f3f3f4d5e3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f743f60597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+67613f1d1d1d6d6e6f1d1d1d1d6d6e2c624665434363603f1d1d1d1d3f3f1d1d1d1d3f6c6060603b606070606060606b3f3f3f3f3f3f3f3f3f3f743f3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+67603f3f3f3f3f3f3f3f3f3f3f3f3f614a7b7b7b0057603f1d1d1d1d3f3f1d1d1d1d3f606244666641654342426563603f1d1d1d3f6c607060606b3f3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+586b606060606060707060606060706c4a7b7b7b0067603f1d1d1d1d1d1d1d1d1d1d3f61697b7b7b7b7b7b7b7b0057603f1d6f4e3f6062434063603f3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+5b4240444546464565434044666543425c7b7b7b0067613f1d1d1d1d1d1d1d1d1d1d3f60794b505053545175534c77603f1d1d6d6e2c59000057603f746b497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b0077603f1d1d1d1d1d1d1d1d1d1d3f606a576c70706060606b5967603f3f3f3f3f605a000078603f3f60597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+4b535275567552755256515154755075525652754c68603f1d1d1d1d1d4d6e6e6e6f3f607977603f3f3f5d3f606a586b60707060606c49000068603f3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+476c606060603c6070606060706060603c603c6b4977603f3f3f3f3f3f5d3f3f3f3f3f605a58613f1d1d5d3f605a5b424343404465405c000058603f3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+57603f3f3f3f3f1d3f3f3f3f5d1d3f3f3f3f5d6059786b6070606060603b60607060606c5a77603f1d6f5e3f607250547552565151757575757360743f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+78603f1d1d1d3f1d3f1d1d1d5d1d3f1d1d1d5d61695b40434445454666664165434265425c58613f1d1d1d3f6b606060607060606070707070606c3f3f604a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+48603f1d6f1d3f1d3f1d6f6e5e1d3f1d6f6e5e6169004b505053505151567552535451754c77603f3f3f3f3f3f3f3f3f3f27273f3f3f3f3f3f3f74743f604a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+57603f1d5d1d3f1d3f1d1d1d3f1d3f1d1d1d3f607252736c60607060606060607060606b5958613f3f3f3f3f3f3f273f3f3f3f3f3f273f3f3f3f3f3f74605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+78603f3f5d3f3f1d3f3f3f3f3f1d3f3f3f3f3f6b6060606c3f3f3f3f07070c3f3f7474607273603f3f6c6060603b7060606060606070607060606060706c497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+57603f1d5d1d1d1d1d1d1d1d1d1d1d1d1d1d3f3f273f3f3f3f1d1d1d0707071d741d3f6b60606c3f3f6062446666434044464645654340434044666543405c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+782b6e6e5e1d1d1d1d1d1d1d1d1d1d1d1d1d3f3f3f3f273f3f1d1d1d1b07070c1d1d3f3f3f3f3f3f3f60797b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+68603f1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d3f6c6060706b271d1d1d0b070c1d1d1d3f3f3f3f3f3f3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+58603f3f3f3f3f1d1d1d1d1d1d1d1d1d1d1d3f60624363613f1d1d1d07071c1d1d1d3f6c60607060606c5a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+47613f1d1d1d3f1d1d1d1d1d1d1d1d1d1d1d3f606a7b47613f1d1d0b07071d1d1d1d3f606265434265425c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+68603f1d6f1d3f1d1d1d1d1d1d1d1d1d1d1d3f606a7b57613f1d1d1d07071d1d1d1d3f60597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+58603f1d5d1d3f1d1d1d1d1d1d1d1d1d1d1d3f605a7b67603f1d1d1d1b071d1d1d1d0b606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+47613f3f5d3f3f3f3f3f3f3f3f3f3f3f3f3f3f605a7b6760071d1d1d271d1d1d1d1d07606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+586b6060706060606b3f3f6c606060606070606c497b6761071c1d1d1d271d1d1d1d1b605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+5b42404443446663603f3f6062654466654342405c7b67601c07073f3f3f3f3f3f7474605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+7b7b7b7b7b7b7b48613f3f60725050545175534c007b586b60607060606060606070606c497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+7b7b7b7b7b7b7b57603f3f6b6060706060606b59007b5b424044434466654466654342405c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
 __sfx__
 151000000c0730000000000000000c013000000000000000266550d0000e625000000e615000000e615000000c0730000000000000000c013000000c07300000266550d0000e625000000e615000000e61500000
 a5100000021450e14502115021450212502115021450e11502145021250211502145021250211502145021150f145031250311503145031250f1150314503115021450e1250211502145021250e1150214502115
