@@ -10,44 +10,6 @@ __lua__
 
 -- HELPER
 ------------------
-mission1 = [[7171717171717171714b5050505050505050505050505050505050505050505050505050504c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-710000000000000000476c60606060606060606060606060606060606060606b606060606b49000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-71000000000000000057601d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d6049000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-7100000000000000002d5f1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d6049000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-7100000000000000002f2f1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d6049000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-7100000000000000003d7d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d6049000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-71000000000000000058601d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d6049000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-71000000000000000047601d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d6049000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-71000000000000000047601d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d6049000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-71000000000000000047601d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d6049000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-71000000000000000047601d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d60494b50505050504c4b50505050000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-71000000000000000047601d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d6049476c6060606b49476c606060000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-71000000000000000047601d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d604947601d1d1d604947601d1d1d000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-71000000000000000047601d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d4d6e6e2c7273601d1d1d60494760000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-71000000000000000047601d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d5d1d1d6b3c606c1d1d1d60727360000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-71000000000000000047601d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d5d1d1d1d5d1d1d1d1d1d6b3c606c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-71000000000000000047601d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d5d1d1d4d5e1d1d1d1d1d1d5d1d1d1d1d1d1d1d1d1d1d1d1d1d00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-710000000000000000476b606060606060606060606060606b1d1d1d1d1d1d1d1d5d1d1d5d1d1d1d1d1d1d4d5e1d1d1d1d1d1d1d1d1d1d1d1d1d00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-7171717171717171715b4040404040404040404040404063601d1d1d1d1d1d1d1d6d4e1d5d1d1d1d1d1d1d5d1d1d1d1d1d1d1d1d1d1d1d1d1d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-000000000000000000000000000000000000000000000047601d1d1d1d1d1d1d1d1d5d1d5d1d1d1d1d1d1d5d1d1d1d1d1d1d1d1d1d1d1d1d1d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-4b5053525354555575535352505050505050505050504c47601d1d1d1d1d1d1d1d1d5d1d5d1d1d1d4d6e6e5e1d1d1d1d1d1d1d1d1d1d1d1d1d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-576c607070606060707060606060606060606060606b49472b6e6e6e6e6e4e1d1d1d5d1d5d1d1d1d5d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d00000000000000000000000000000000007b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-67603f743f3f3f3f3f3f3f3f3f3f743f3f3f3f3f3f607273601d1d1d1d1d5d1d1d1d3f3f3f3f1d4d5e1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-6761741d1d3f1d3f3f1d1d3f74741d3f1d1d1d3f3f6b60606c1d1d1d1d1d5d1d1d3f1d1d1d1d3f5e1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-77603f3f3f3f1d3f3f3f3f3f1d3f3f3f3f3f3f3f1d3f3f3f3f1d1d1d1d1d6d6e3f1d1d1d1d1d1d3f1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-58603f1d1d3f1d3f3f1d1d3f1d3f1d3f1d1d1d3f1d3f3f3f3f1d1d1d1d1d1d1d3f1d1d1d1d1d1d3f1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-67613f1d1d3f3f3f3f1d1d3f3f3f1d3f1d1d1d3f1d3f3f3f1d1d1d1d1d1d1d4d3f1d1d1d1d1d1d3f6e4e1d1d1d1d1d1d1d1d1d1d1d1d1d00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-78603f743f3f4d6e6e4e3f3f1d3f3f3f3f3f3f3f3f3f3f3f1d1d1d1d1d1d1d5d3f1d1d1d1d1d1d3f1d5d1d1d1d1d1d1d1d1d1d1d1d1d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-476b60606b3f5d1d6c3b606060606b0c1d1d1d6c6060606b1d1d1d1d1d4d6e5e1d3f1d1d1d1d3f1d1d6d6e4e1d1d1d6c60606060601d1d00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-5b446563603f5d3f606244666563601c1d1d1d60624063601d1d1d1d1d5d1d1d1d1d3f3f3f3f1d1d1d1d1d5d1d1d1d6062404063601d1d00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-4b5052732b6e5e1d607253754c47601d1d1d0b60494b732b6e6e6e6e6e5e1d1d1d1d5d1d1d5d1d1d1d1d1d6d6e6e6e2c49000047601d1d00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-486c60606c1d1d1d6b60606b5947601d1d0b076049476c6c1d1d1d1d1d1d1d1d4d6e5e1d1d5d1d1d1d1d1d1d1d1d1d6049000047601d1d00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]]
-
--- mission1 = [[a
--- b
--- c
--- d]]
-
 function dist_trig(dx, dy)
   local ang = atan2(dx, dy)
   return dx * cos(ang) + dy * sin(ang)
@@ -149,6 +111,18 @@ end
 
 
 
+-- function hex_to_char(str)
+--   local result = ""
+--   for i = 1, #str, 2 do
+--     local substr = sub(str, i, i + 1)
+--     local char = tonum("0x"..substr)
+--     if substr[0] == "\n" or substr[1] == "\n" then
+--     else
+--       result = result..chr(tonum("0x"..substr))
+--     end
+--   end
+--   return result
+-- end
 
 
 function get_controlled_entity()
@@ -163,9 +137,8 @@ function check_entity_collision(x1, y1, w1, h1, x2, y2, w2, h2)
 end
 
 
-function wall_collide(x, y, flag)
-  flag = flag or 0
-  return fget(mget(flr(x / 8), flr(y / 8)), flag)
+function tile_check(x, y, flag)
+  return fget(mget(flr(x / 8), flr(y / 8)), flag or 0)
 end
 
 
@@ -226,7 +199,7 @@ function _init()
   
   entity_stats_list = {}
   for t in all(stringToTable(
-    [[Player,bot,8,8,100,100,false,1,2,3,100|Dervish,bot,7,7,40,80,false,1,5,3.5,100|Vanguard,bot,9,9,80,60,false,2,4,2,200|Warden,bot,9,9,120,60,false,3,3,2,300|CyberSeer,preacher,14,14,100,60,true,1,2,1,1000|QuantumCleric,preacher,16,16,120,80,true,1,1,1,1500]])) do
+    [[Player,bot,8,8,100,100,false,1,5,3,100|Dervish,bot,8,8,350,800,false,5,5,3.5,100|Vanguard,bot,8,8,750,800,false,7,4,2,200|Warden,bot,9,9,900,800,false,9,4,2,300|CyberSeer,preacher,14,14,1000,600,true,1,2,1,1000|QuantumCleric,preacher,16,16,1200,800,true,1,1,1,1500]])) do
     local entity_name = t[1]
     local base_class = t[2]
     entity_stats_list[entity_name] = {
@@ -243,15 +216,16 @@ function _init()
     }
   end
    
+
+  local mission_1 = stringToTable([[
+    72,336,true,Player|
+    392,336,false,Dervish|
+    272,408,false,Dervish|
+    480,360,false,Dervish|
+    464,208,false,Dervish|
+    376,208,false,CyberSeer]])
   missions_entities_params = {
-    { -- Mission 1
-    {9*8, 42*8, true, "Player"},
-    {49*8, 42*8, false, "Dervish"},
-    {34*8, 51*8, false, "Dervish"},
-    {60*8, 45*8, false, "Dervish"},
-    {58*8, 26*8, false, "Dervish"}, 
-    {47*8, 26*8, false, "CyberSeer"}, 
-    },
+    mission_1,
     { -- Mission 2
       {70, 80, true, "bot"},
       {85, 120, false, "bot"},
@@ -274,8 +248,9 @@ function _init()
 
   mission_laser_doors_params = {
     { -- Mission 1
-    {12*8, 39*8},
-    {55*8, 49*8}
+    {12*8, 39*8, 8},
+    {55*8, 49*8, 12},
+    -- {55*8, 49*8}
     }, 
     { -- Mission 2
 
@@ -309,8 +284,6 @@ mission3|
 mission4]])
 
 
-
-
   mission_briefings_params = {
     "Initiation ground \n\nLearn the basics:\n- movement\n- cycle skills\n- environment\n- engaging targets\n- interacting with \nobjects",
     "Infiltrate the \nNeo-Tokara Complex\n\nevade or \nneutralize guards; \nactivate the 3 \ndata transmission \ntowers",
@@ -320,24 +293,24 @@ mission4]])
 
   -- Mission Brief
   briefing_panel = textpanel:new(52, 36, 67, 74, "")
-  local stats = stringToTable([[50, 57, 65, 73, 81, 88, 96, 104, 112, 120| 
-                                50, 55, 61, 66, 72, 77, 83, 88, 94, 100|
+  local stats = stringToTable([[500, 570, 650, 730, 810, 880, 960, 1040, 1120, 1200| 
+                                500, 550, 610, 660, 720, 770, 830, 880, 940, 1000|
                                 50, 53, 56, 60, 63, 66, 70, 73, 76, 80|
-                                50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100|
+                                10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20|
                                 1, 2, 2, 3, 3, 4, 4, 5, 5, 6 |
                                 100, 131, 164, 200, 240, 285, 336, 394, 460, 535 |
                                 0,0,0,0,0,0,5,6,2,5,9,3,1,2,2,4 |
                                 0,1,0,0,0,0,0,2,0,0,0,0,0,0,0,0 |
-                                4, 20, 9, 26,health| 
-                                4, 34, 9, 26,energy|
-                                4, 48, 9, 26,range|
-                                4, 62, 9, 46,quick shoot|
-                                4, 76, 9, 22,regen|
+                                10, 20, 9, 26,health| 
+                                10, 34, 9, 26,energy|
+                                10, 48, 9, 22,range|
+                                10, 62, 9, 26,attack|
+                                10, 76, 9, 22,regen|
                                 40, 96, 9, 54,begin mission|
                                 38, 110, 9, 58,select mission]])
 
   selected_loadout = 1
-  credits = 32000
+  credits = 5000
   loadout_select_text_panels = {}
   for i = 9, 15 do
     add(loadout_select_text_panels, textpanel:new(unpack(stats[i])))
@@ -346,11 +319,11 @@ mission4]])
   cost_table = stats[6]
   selected_debrief = 1
   loadout_select_sliders = {
-    slider:new(72, 22, stats[1]), -- health
-    slider:new(72, 36, stats[2]), -- energy
-    slider:new(72, 50, stats[3]), -- range
-    slider:new(72, 64, stats[4]), -- quick_shoot
-    slider:new(72, 78, stats[5]), -- regen
+    slider:new(66, 22, stats[1]), -- health
+    slider:new(66, 36, stats[2]), -- energy
+    slider:new(66, 50, stats[3]), -- range
+    slider:new(66, 64, stats[4]), -- quick_shoot
+    slider:new(66, 78, stats[5]), -- regen
   }
 
   debrief_text_panels = {
@@ -559,8 +532,8 @@ function draw_debrief()
   local used_impact_strike = ability_actions[2].max_ammo - ability_actions[2].current_ammo
   local used_regen = ability_actions[3].max_ammo - ability_actions[3].current_ammo
 
-  local display_pulse_strike = -min(used_pulse_strike, flr((debrief_counter / 15) * used_pulse_strike)) * 10
-  local display_impact_strike = -min(used_impact_strike, flr(((debrief_counter - 15)/ 15) * used_impact_strike)) * 20
+  local display_pulse_strike = -min(used_pulse_strike, flr((debrief_counter / 15) * used_pulse_strike)) * 3
+  local display_impact_strike = -min(used_impact_strike, flr(((debrief_counter - 15)/ 15) * used_impact_strike)) * 30
   local display_regen = -min(used_regen, flr(((debrief_counter - 30)/ 15) * used_regen)) * 100
   local display_enemies_killed = min(enemies_killed, flr(((debrief_counter - 45)/ 15) * enemies_killed))
   local display_enemies_reward = min(enemies_reward, flr(((debrief_counter - 45)/ 15) * enemies_reward))
@@ -785,7 +758,7 @@ end
 
 
 function load_entities()
-  copy_map_into_memory(mission1)
+  -- copy_map_into_memory(mission1)
 
   entities = {}
   for params in all(missions_entities_params[selected_mission]) do
@@ -797,14 +770,18 @@ function load_entities()
     add(laser_doors, laser_door:new(unpack(params)))
   end
 
+  -- Apply stats to player
   player = get_controlled_entity()
-  
   local health = loadout_select_sliders[1].values[loadout_select_sliders[1].value]
   player.max_health, player.health = health, health
   
   local energy = loadout_select_sliders[2].values[loadout_select_sliders[2].value]
   player.max_energy, player.energy = energy, energy
+
   player.view_radius = loadout_select_sliders[3].values[loadout_select_sliders[3].value]
+  player.ability_actions[1].damage = loadout_select_sliders[4].values[loadout_select_sliders[4].value]
+  player.ability_actions[2].damage = loadout_select_sliders[4].values[loadout_select_sliders[4].value] * 5
+
   
   local regen_count = loadout_select_sliders[5].values[loadout_select_sliders[5].value]
   player.ability_actions[3].current_ammo = regen_count
@@ -884,6 +861,7 @@ function check_winning_condition()
       return
     end
   end
+
   if view_radius > 1 then
     view_radius -= .5
   else
@@ -979,7 +957,7 @@ function projectile:check_wall_collision()
   local steps = max(abs(self.vx), abs(self.vy))
   local step_x, step_y = sgn(self.vx), sgn(self.vy)
   for i = 1, steps do
-    if wall_collide(self.x + (i * step_x), self.y + (i * step_y)) then
+    if tile_check(self.x + (i * step_x), self.y + (i * step_y)) then
       return true
     end
   end
@@ -1096,21 +1074,19 @@ function entity:new(x, y, controlled, entity_name)
   self.heal_cooldown = 0
   self.rectangle_side = 40
   self.damage_texts = {}
-
-  self.controlled = controlled
+  self.controlled = controlled == 'true' 
 
   self.idle_frames = {lr = {0, 1}, up = {32, 33}, down = {16, 17}, duration = .5}
   self.move_frames = {lr = {2, 3}, up = {34, 35}, down = {18, 19}, duration = .1}
   self.animation_frame = 1
 
   self.frame_counter = 0
-  self.energy_recharge_rate = .5
+  self.energy_recharge_rate = 5
 
   self.current_state = enemy_state.idle
   self.target = {x=self.x, y=self.y}
   self.state_actions = {
     [enemy_state.idle] = entity.idle_behavior,
-    -- [enemy_state.patrol] = entity.patrol_behavior,
     [enemy_state.alert] = entity.alert_behavior,
     [enemy_state.attack] = entity.attack_behavior,
     [enemy_state.search] = entity.search_behavior
@@ -1126,7 +1102,7 @@ function entity:new(x, y, controlled, entity_name)
       current_cooldown = 0,
       attack_cooldown = self.attack_cooldown,
       projectile_speed = 4,
-      energy_cost = 2,
+      energy_cost = 20,
       radius = 1,
       damage = self.attack_power
     },
@@ -1138,14 +1114,10 @@ function entity:new(x, y, controlled, entity_name)
       current_cooldown = 0,
       attack_cooldown = 10,
       projectile_speed = 3,
-      energy_cost = 15,
+      energy_cost = 150,
       radius = 2,
-      damage = 10
+      damage = self.attack_power * 5
     },
-    -- {
-    --   action = entity.invisible,
-    --   description = "Stealth Mode"
-    -- },
     {
       action = entity.health_recharge,
       description = "Regen Field",
@@ -1304,7 +1276,7 @@ end
 function entity:check_poison_tile()
   self.damage_timer = max(0, self.damage_timer - 1)
   
-  if self.damage_timer == 0 and wall_collide(self.x, self.y, 2) then
+  if self.damage_timer == 0 and tile_check(self.x, self.y, 2) then
     sfx(14,0)
     self:inflict_damage(2)
     self.damage_timer = 5
@@ -1313,8 +1285,8 @@ end
 
 
 function entity:check_outside()
-  if wall_collide(self.x, self.y, 3) and self.controlled then
-    self.energy = max(self.energy - .7, 0)
+  if tile_check(self.x, self.y, 3) and self.controlled then
+    self.energy = max(self.energy - 7, 0)
     local p = particle:new(cam.x + rnd(128), cam.y + rnd(128), rnd(1), 1, rnd(128) , 0, 5)
     add(particles, p)
   end
@@ -1437,7 +1409,7 @@ end
 
 function entity:move_target_randomly()
   local new_x, new_y = self.x + rnd(17) - 8, self.y + rnd(17) - 8
-  if not wall_collide(new_x, new_y) then
+  if not tile_check(new_x, new_y) then
     self.target.x, self.target.y = new_x, new_y
   end
 end
@@ -1469,7 +1441,7 @@ function entity:can_see(target)
     
     local check_x, check_y = start_x, start_y
     for i = 0, max_steps do
-      if wall_collide(check_x, check_y) then
+      if tile_check(check_x, check_y) then
           return false
       end
       check_x += step_x
@@ -1501,10 +1473,10 @@ function entity:apply_physics()
 
   local function check_collision(next_x, next_y)
     -- Check map collision
-    if wall_collide(next_x, next_y) or
-        wall_collide(next_x + self.width - 1, next_y) or
-        wall_collide(next_x, next_y + self.height - 1) or
-        wall_collide(next_x + self.width - 1, next_y + self.height - 1) then
+    if tile_check(next_x, next_y) or
+        tile_check(next_x + self.width - 1, next_y) or
+        tile_check(next_x, next_y + self.height - 1) or
+        tile_check(next_x + self.width - 1, next_y + self.height - 1) then
       return true
     end
 
@@ -1521,8 +1493,8 @@ function entity:apply_physics()
           return true
         end
       end
-      return false
     end
+    return false
   end
 
   local next_x = self.x
@@ -1580,7 +1552,12 @@ function entity:handle_input()
   local gameplay_panel = player_hud.gameplay_panel
   gameplay_panel.active = close_to_emitter or close_to_interface
   gameplay_panel.selected = close_to_emitter or close_to_interface
-  gameplay_panel.textline = "❎ to operate "
+  if close_to_emitter then
+    gameplay_panel.textline = "❎ (hold) to operate "
+  elseif close_to_interface then
+    gameplay_panel.textline = "❎ to operate "
+  end
+
   local width = #gameplay_panel.textline * 4
   gameplay_panel.width = width
   gameplay_panel.x = (128 - width)/2
@@ -1760,7 +1737,7 @@ function entity:draw_overlay()
 
     --   local check_x, check_y = start_x, start_y
     --   for i = 0, distance do
-    --     if wall_collide(flr(check_x), flr(check_y)) then
+    --     if tile_check(flr(check_x), flr(check_y)) then
     --       pset(check_x, check_y, 8)
     --     else
     --       pset(check_x, check_y, 11)
@@ -1791,14 +1768,13 @@ end
 --------------
 laser_door = {}
 laser_door.__index = laser_door
-function laser_door:new(x, y)
+function laser_door:new(x, y, color)
   local self = setmetatable({}, laser_door)
   self.x, self.y, self.end_y = x, y, y + 16
+  self.color = color
   self.active = true
 
-  while not wall_collide(self.x + 7, self.end_y) do
-    self.end_y += 1
-  end
+  while not tile_check(self.x + 7, self.end_y) do self.end_y += 1 end
   return self
 end
 
@@ -1809,21 +1785,16 @@ function laser_door:draw()
     for i = 0, 2 do
       line(
         self.x + 7 + i * 2, 
-        self.y + 13 - i * 4, 
+        self.y + 12 - i * 4, 
         self.x + 7 + i * 2, 
-        self.end_y + 2 + i * 4, 8)
+        self.end_y + 2 + i * 4, 
+        self.color)
     end
   end
 end
 
 
 function laser_door:update()
-  for i, door in ipairs(laser_doors) do
-    if door == self and #emitters > 0 then
-      self.active = not emitters[i].active
-      break
-    end
-  end
 end
 
 
@@ -1846,6 +1817,14 @@ end
 
 function emitter:update()
   self.active = self.current_height == self.max_height
+
+  for i, emitter in ipairs(emitters) do
+    if self == emitter then
+      local laser_door = laser_doors[i]
+      laser_door.active = not self.active
+      self.color = laser_door.color
+    end
+  end
 end
 
 
@@ -1854,8 +1833,9 @@ function emitter:draw()
   self.blink_timer += 1
   
   if self.current_height == self.max_height then
-    pal(6, 8)
-    pal(7, 8)
+    local color = self.color
+    pal(6, color)
+    pal(7, color)
 
     local h, k = self.x + 4, self.y - 1
     local a = visible_height + 6 + sin(time()) * 1.3
@@ -1869,7 +1849,7 @@ function emitter:draw()
 
       for y = y_min, y_max do
         if pget(x, y) == 6 then
-          pset(x, y, 8)
+          pset(x, y, color)
         end
       end
     end
@@ -1920,7 +1900,7 @@ function barrel:new(x, y)
   self.x, self.y = x, y
   self.poison = rnd() > .5
   self.height, self.width = 16, 8
-  self.health, self.hit_flash_timer = 10, 0
+  self.health, self.hit_flash_timer = rnd(100) + 50, 0
   return self
 end
 
@@ -2131,45 +2111,45 @@ b7b78506f3d1d1d1f3f306263606f3d65262d1f306a68706f3f3f3f3f3f3f3f3f3f3f3f3f3f3f372
 00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 00007416f3f3f3f3f3f306948606f3d1d1d1d1f306a58606f3d1d1d1d1d1d1d1d1d1d1d1f3f3f3f3f3f3f3d1d1d1d1d1d1d1d1d1d1f316967506f3d1d1f306a5
 00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-000085b6070706b6f3f306948606f3f3f3f3727206a58606f3d1d1d1f3f372f3f3d1d1d1f3c6060606b6f3d1d1d1d1d1d1d1d1d1d1f316968706f3d1d1f3b694
+000085b6070706b6f3f306948606f3f3f3f3727206a58606f3d1d1d1f3f372f3f3d1d1d1f3c6060606b6f3d1d1f3f3f3f3f3f3d1d1f316968706f3d1d1f3b694
 00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 0000b52434243606f3f3069485b6070706070706c6a485b6f4f2f2f2f50606b6f3d1d1d1f306262436b6f3d1d1f3f3f3f3f3f3d1d1f306977506f3d1d1f30695
 00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b4456567655737b2f3f30694b50434240434343424c5b544d3f2f2f2e3243606f3d1f6d1f316a4b77406f3d1d1f3f3f3f3f3f3d1d1f306a687b2f3d1d1f306a6
+b4456567655737b2f3f30694b50434240434343424c5b544d3f2f2f2e3243606f3d1f6d1f316a4b77406f3d1d1f347d1d1d1f3d1d1f306a687b2f3d1d1f306a6
 00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-75c60607060606c6f3f30627355705c4b7b7b7b7b7b7b7b7b7b7b7b7b7b77506f3d1d1d1f316a4b77406f3d1d1f347d1d1d1f3d1d1f306978606f3d1d1f306a6
+75c60607060606c6f3f30627355705c4b7b7b7b7b7b7b7b7b7b7b7b7b7b77506f3d1d1d1f316a4b77406f3d1d1f34747d1d1f3d1d1f306978606f3d1d1f306a6
 00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-85067272f3d5f3f3f3f3b6060706b695b7b7b7b7b7b7b7b7b7b7b7b7b7b7870672f3f3f3f316a4008416f3d1d1f34747d1d1f3d1d1f306a5850672d1d1b006a5
+85067272f3d5f3f3f3f3b6060706b695b7d0b7b7b7b7b7b7b7d0b7b7b7b7870672f3f3f3f316a4008416f3d1d1f3d1d1d1d1f3d1d1f306a5850672d1d1b006a5
 00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-8506f3d1d1d5d1d1f3f3f3f3f3f3f4e2b7b7b7b7b7b7b7b7b7b7b7b7b7b785b60607060606c6a5b78416f3d1d1f3d1d1d1d1f3d1d1f316968606f372b07006a4
+8506f3d1d1d5d1d1f3f3f3f3f3f3f4e2b7b7b7d0b7b7b7b7b7b7b7b7b7b785b60607060606c6a5b78416f3d1d1f3f3f3f3f3f3d1d1f316968606f372b07006a4
 00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-8606f3d1f6e5d1d1f3f3d1d1d1d1f2f2b7b7b7b7b7b7b7b7b7b7b7b7b7b7b504344454546424c5b77416f3d1d1f3f3f3f3f3f3d1d1f316968506f3d1b17006a4
+8606f3d1f6e5d1d1f3f3d1d1d1d1f2f2b7b7b7b7b7b7d0b7b7b7b7d0b7b7b504344454546424c5b77416f3d1d1d1d1d1d1d1d1d1d1f316968506f3d1b17006a4
 00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-8506f3d1d1d1d1d1f3f3d1d1d1d1f2f2b7b7b7b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b775b2f3d1d1f3f3f3f3f3f3d1d1f306977416f3d1d1b106a5
+8506f3d1d1d1d1d1f3f3d1d1d1d1f2f2b7b7d0b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7761647d1d1d1d1d1d1d1d1d1d1f306977416f3d1d1b106a5
 00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-7416f3f3f3f3f3f3f3f3f3f3f3f3c7e3b7b7b7b7b7b7b7b7b40545655567572565151545052535c47706f3d1d1d1d1d1d1d1d1d1d1f306a67706f3d1d1f306a6
+7416f3f3f3f3f3f3f3f3f3f3f3f3c7e3b7b7b7b7b7b7b7b7b40545655567572565151545052535c48506f347f347f3f3d1d1d1f3f34706a577b2e6e6e4f306a6
 00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-85b6070706060606060706060607c6a5b7b7b7b7b7b7b7b775c6060606c30607060606070606b695761647d1d1d1d1d1d1d1d1d1d1f306978516f3d1d1f306a5
+85b6070706060606060706060607c6a5b7b7b7b7b7b7d0b775c6060606c30607060606070606b69574b60606060606f4f2f2f2f50607c6948516f3d1d5f306a5
 00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b52434244464646656346466563456c5171717171717171785067070c1d5f3f3f3f3f3f3727206a58506f347f347f3f3d1d1d1f3f34706a58516f3d1d1f30697
+b52434244464646656346466563456c5171717171717171785067070c1d5f3f3f3f3f3f3727206a5b5040404040444d3f2f2f2e3563456c58516f3d1d5f30697
 00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-00000000000000000000b7b7b7b7b7b40545655555675725371670c1d1d5d1d1d1d1d1d1d1f306273706f3f3c60606f4f2f2f2f50607c6947706f3d1d1f306a5
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b775c6060606c306060706c6c1d1d1d5d1d1d1d1d1d1d1f3b60606c6f3f3062644d3f2f2f2e3563456c58516f3d1d1f31696
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7770672f3f3d5f3f3f3f3f3f3d1d1d5d1d172d1d1d1d1f3f3f372f3f3f30694b7b7b7b7b7b7b75557053706f3f3f3f316a5
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b78416f3d1d1d5d1d1d1d1d1d1d1d4e57272d1d1d1d1d1f3f3f3f3f3f3f30694b7b7b7b7b7b7d2f5060606c6f3f3c606c694
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b77516f35161e5f3f3f3f3f3f3d1d5d1d1d1d1d1d1d1d1f3c60606060606c694b7b7b7b7b7b7f2f2f3f3f3f3f3f3062604c5
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b77706f35262d1f306263606f3d1d5d1d1d1d1d1d1d1d1f306260404040404c5b7b7b7b7b7b7f2f2d1d1d1d1f3f30695b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b77606f3f3f3727206958416f3f3d5f3f3f3f3f3f3f3f3f316a4b7b7b7b7b717b7b7b7b7b7b7f2f2f3f3f3f3f3f30696b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b785b60607070606c69485b60606b3060607070606060607c6a4b7b7b7b7b717b7b7b7b7b7b7d3d7060606070606c6a5b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b524343404445604c5b52404546464545634044466563424c5b7b7b7b7b717171717171717176656045634245624c5b7b7
+0000000000d000000000b7b7b7b7b7b40545655555675725371670c1d1d5d1d1d1d1d1d1d1f306270505355705c4000000000000000000007706f3d1d6e6c2a5
+b7b7b7b700000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+d0b7b7b7b7b7b7b7b7b7b7b7b7b7b775c6060606c306060706c6c1d1d1d5d1d1d1d1d1d1d1f3b60606060706b695000000000000000000008516f3d1d1f31696
+b7b7b7b700000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7d0b7b7b7d0b7b7d0b7b7b7d0b7770672f3f3d5f3f3f3f3f3f3d1d1d5d1d172d1d1d1d1f3f3f372f3f3f3f4e2b7b7b7b7b7b7b75557053706f3f3f3f316a5
+b7b7b7b700000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7d0b7b7b7b7b7b7b7b7b7b7b78416f35161d5d1d1d1d1d1d1d1d4e57272d1d1d1d1d1f3d1d1d1d1d1d1f2f2b7b7b7b7b7b7d2f5060606c6f3f3c606c694
+b7b7b7b700000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b7b7d0b7b77516f35262e5f3f3f3f3f3f3d1d5d1d1d1d1d1d1d1d1f3d1d1d1d1d1d1f2f2b7b7b7b7b7b7f2f2f3f3f3f3f3f3062604c5
+b7b7b7b700000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7d0b7b7b7b7b7b7b7b7b7b77706f3d1d1d1f3c60606b6f3d1d5d1d1d1d1d1d1d1d1f3f3f3f3f3f3f3c7e3b7b7b7b7b7b7f2f2d1d1d1d1f3f30695b7b7
+b7b7b7b700000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7d0b7b7b7b7b7b7d0b7b7b7b7d0b77606f3f3f3727206263606f3f3d5f3f3f3f3f3f3f3f3f3c60606060607c6a5b7b7b7b7b7b7f2f2f3f3f3f3f3f30696b7b7
+b7b7b7b700000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7b7b7b7b7b7b7b7b7b7b7b7b7b7b785b60607070606c69485b60606b3060607070606060607c6260404563456c5b7b7b7b7b7b7d3d7060606070606c6a5b7b7
+b7b7b7b700000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b7d0b7b7b7b7b7b7b7b7b7b7b7b7b7b524343404445604c5b52404546464545634044466563424c5b7b7b7b7b717171717171717176656045634245624c5b7b7
 b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
@@ -2213,13 +2193,13 @@ __map__
 78603f3f5d3f3f1d3f3f3f3f3f1d3f3f3f3f3f6b6060606c3f3f3f3f07070c3f3f7474607273603f3f6c6060603b7060606060606070607060606060706c497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
 57603f1d5d1d1d1d1d1d1d1d1d1d1d1d1d1d3f3f273f3f3f3f1d1d1d0707071d741d3f6b60606c3f3f6062446666434044464645654340404044666543405c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
 782b6e6e5e1d1d1d1d1d1d1d1d1d1d1d1d1d3f3f3f3f273f3f1d1d1d1b07070c1d1d3f3f3f3f3f3f3f60794b50505050505050504c4b5050505050535451534c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-68603f1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d3f6c6060706b271d1d1d0b070c1d1d1d3f3f3f3f3f3f3f605a576c6060606060606b4a476c606060707060606b597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-58603f3f3f3f3f1d1d1d1d1d1d1d1d1d1d1d3f60624363613f1d1d1d07071c1d1d1d3f6c60607060606c5a576027273f3f3f3f607273603f3f3f3f3f3f3f60597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-68603f1d6f1d3f1d1d1d1d1d1d1d1d1d1d1d3f606a7147613f1d1d0b07071d1d1d1d3f606265434265425c78603f1d1d1d1d3f6b60606c3f1d1d1d1d1d3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-58603f1d5d1d3f1d1d1d1d1d1d1d1d1d1d1d3f605a7157613f1d1d1d07071d1d1d1d3f60597b7b7b7b7b7b48603f1d1d1d1d3f3f3f3f3f3f1d1d1d1d1d3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-47613f3f5d3f3f3f3f3f3f3f3f3f3f3f3f3f3f605a7167603f1d1d1d1b071d1d1d1d0b606a7b7b7b7b7b7b57603f1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-586b60607060606b3f3f6c60606060606070606c49716760071d1d1d271d1d1d1d1d07606a7b7b7b7b7b7b78603f1d1d1d1d3f3f3f3f3f3f1d1d1d1d1d3f6b497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-5b424040446663603f3f606245654466654342405c716761071c1d1d1d271d1d1d1d1b605a7b7b7b7b7b7b57603f1d1d1d1d3f6c60606b3f1d0b1d1d1d3f60597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+68603f1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d3f6c6060706b271d1d1d0b070c1d1d1d3f3f3f3f3f3f3f605a576c6060606060606b4a476c60603c707060606b597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+58603f3f3f3f3f1d1d1d1d1d1d1d1d1d1d1d3f60624363613f1d1d1d07071c1d1d1d3f6c60607060606c5a576027273f3f3f3f607273603f3f5d3f3f3f3f60597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+68603f1d6f1d3f1d1d1d1d1d1d1d1d1d1d1d3f606a7147613f1d1d0b07071d1d1d1d3f606265434265425c78603f1d1d1d1d3f6b60606c3f1d5d1d1d1d3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+58603f1d5d1d3f1d1d1d1d1d1d1d1d1d1d1d3f605a7157613f1d1d1d07071d1d1d1d3f60597b7b7b7b7b7b48603f1d1d1d1d3f3f3f3f3f3f1d5d1d1d1d3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+47613f3f5d3f3f3f3f3f3f3f3f3f3f3f3f3f3f605a7167603f1d1d1d1b071d1d1d1d0b606a7b7b7b7b7b7b57603f1d1d1d1d1d1d1d1d1d1d1d6d6e6e4e3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+586b60703b60606b3f3f6c60606060606070606c49716760071d1d1d271d1d1d1d1d07606a7b7b7b7b7b7b78603f1d1d1d1d3f3f3f3f3f3f1d1d1d1d6d6e2c497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+5b424043446663603f3f606245654466654342405c716761071c1d1d1d271d1d1d1d1b605a7b7b7b7b7b7b57603f1d1d1d1d3f6c60606b3f1d0b1d1d1d3f60597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
 7b7b4b50755273613f3f60725050505052505353504c67601c07073f3f3f3f3f3f7474605a7b7b7b7b7b7b782b3f3f3f27273f606263603f0b07070c1d3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
 7b7b576c6070606c3f3f6b606060603c607070606b6a586b60607060606060606070606c497b7b7b7b7b7b586b6060606060606c4a586b60606b07071d3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
 7b7b58603f3f3f5d3f3f3f3f3f3f3f5d3f3f3f3f60595b424044434466654466654342405c7b7b7b7b7b7b5b42404040404040405c5b4240636007072727605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
