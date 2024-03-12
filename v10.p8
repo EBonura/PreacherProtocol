@@ -3,7 +3,6 @@ version 41
 __lua__
 
 
--- different colours for laser doors and emitters
 -- Time spent in mission
 -- check if we can load map
 
@@ -109,8 +108,6 @@ function unhex(s)
   return t
 end
 
-
-
 -- function hex_to_char(str)
 --   local result = ""
 --   for i = 1, #str, 2 do
@@ -186,7 +183,7 @@ function _init()
   intro_counter, intro_blink = 0, 0
 
   -- Mission Select
-  selected_mission = 1
+  selected_mission = 2
   level_select_args = stringToTable([[
     6,35,9,38,mission 1,1000|
     6,50,9,38,mission 2,2000|
@@ -197,9 +194,11 @@ function _init()
     add(level_select_text_panels, textpanel:new(unpack(level_select_arg)))
   end
   
+-- attack speed 4,3,2,1
+
   entity_stats_list = {}
   for t in all(stringToTable(
-    [[Player,bot,8,8,100,100,false,1,5,3,100|Dervish,bot,8,8,350,800,false,5,5,3.5,100|Vanguard,bot,8,8,750,800,false,7,4,2,200|Warden,bot,9,9,900,800,false,9,4,2,300|CyberSeer,preacher,14,14,1000,600,true,1,2,1,1000|QuantumCleric,preacher,16,16,1200,800,true,1,1,1,1500]])) do
+    [[Player,bot,8,8,100,100,false,1,2,3,100|Dervish,bot,8,8,350,800,false,5,5,3.5,300|Vanguard,bot,8,8,750,800,false,7,4,2,400|Warden,bot,9,9,900,800,false,9,4,2,600|CyberSeer,preacher,14,14,1000,1000,true,1,2,1,1000|QuantumCleric,preacher,16,16,1200,800,true,1,1,1,1500]])) do
     local entity_name = t[1]
     local base_class = t[2]
     entity_stats_list[entity_name] = {
@@ -218,7 +217,7 @@ function _init()
    
 
   local mission_1 = stringToTable([[
-    72,336,true,Player|
+    64,48,true,Player|
     392,336,false,Dervish|
     272,408,false,Dervish|
     480,360,false,Dervish|
@@ -227,17 +226,26 @@ function _init()
   missions_entities_params = {
     mission_1,
     { -- Mission 2
-      {70, 80, true, "bot"},
-      {85, 120, false, "bot"},
+      {68*8, 27*8, "true", "Player"},
+      {82*8, 27*8  , false, "Dervish"},
+      {83*8, 37*8  , false, "Dervish"},
+      {100*8, 28*8 , false, "Vanguard"},
+      {88*8, 52*8  , false, "Vanguard"},
+      {74*8, 45*8  , false, "Dervish"},
+      {85*8, 45*8  , false, "Dervish"},
+      {67*8, 37*8  , false, "Warden"}, 
+
     -- {4*8, 25*8, false, "Dervish"},
     -- {15*8, 26*8, false, "Dervish"},
     -- {6*8, 43*8, false, "Vanguard"},
     -- {27*8, 45*8, false, "Dervish"},
     -- {35*8, 43*8, false, "Dervish"},
     -- {50, 155, false, "QuantumCleric"},
+    {126*8, 1*8  , false, "Vanguard"},
+
     },
     { -- Mission 3
-      {90, 100, true, "bot"},
+      {92, 34, true, "bot"},
       {105, 140, false, "bot"},
     },
     { -- Mission 4
@@ -246,15 +254,18 @@ function _init()
     },
   }
 
-  mission_laser_doors_params = {
-    { -- Mission 1
-    {12*8, 39*8, 8},
-    {55*8, 49*8, 12},
-    -- {55*8, 49*8}
-    }, 
-    { -- Mission 2
+  local_mission_1_2_laser_doors =  {
+    {107*8, 29*8, 12},  -- mission 2
+    {12*8, 39*8, 8},    --  mission 1
+    {99*8, 42*8, 11},   -- mission 2
+    {105*8, 29*8, 8},   -- mission 2
+    {106*8, 29*8, 7},   -- mission 2
+    {55*8, 49*8, 12},   -- mission 1
+  }
 
-    },
+  mission_laser_doors_params = {
+    local_mission_1_2_laser_doors, 
+    local_mission_1_2_laser_doors,
     { -- Mission 3
 
     },
@@ -286,10 +297,12 @@ mission4]])
 
   mission_briefings_params = {
     "Initiation ground \n\nLearn the basics:\n- movement\n- cycle skills\n- environment\n- engaging targets\n- interacting with \nobjects",
-    "Infiltrate the \nNeo-Tokara Complex\n\nevade or \nneutralize guards; \nactivate the 3 \ndata transmission \ntowers",
-    "Destroy the \nCore Facility\n\nevade or \nneutralize guards; \ndestroy the energy \ncore",
-    "Briefing4",
+    "Infiltrate the \nNeo-Tokara Complex\n\nneutralize guards; \nactivate all \nswitchess",
+    "Access Denied:\n\nmission not \navailable in beta",
+    "Access Denied:\n\nmission not \navailable in beta",
   }
+
+  -- "Destroy the \nCore Facility\n\nevade or \nneutralize guards; \ndestroy the energy \ncore",
 
   -- Mission Brief
   briefing_panel = textpanel:new(52, 36, 67, 74, "")
@@ -297,6 +310,7 @@ mission4]])
                                 500, 550, 610, 660, 720, 770, 830, 880, 940, 1000|
                                 50, 53, 56, 60, 63, 66, 70, 73, 76, 80|
                                 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20|
+                                4, 4, 3, 3, 3, 2, 2, 1, 1, 0|
                                 1, 2, 2, 3, 3, 4, 4, 5, 5, 6 |
                                 100, 131, 164, 200, 240, 285, 336, 394, 460, 535 |
                                 0,0,0,0,0,0,5,6,2,5,9,3,1,2,2,4 |
@@ -304,26 +318,28 @@ mission4]])
                                 10, 20, 9, 26,health| 
                                 10, 34, 9, 26,energy|
                                 10, 48, 9, 22,range|
-                                10, 62, 9, 26,attack|
-                                10, 76, 9, 22,regen|
-                                40, 96, 9, 54,begin mission|
+                                10, 62, 9, 38,atk force|
+                                10, 76, 9, 34,atk rate|
+                                10, 91, 9, 22,regen|
+                                40, 106, 9, 54,begin mission|
                                 38, 110, 9, 58,select mission]])
 
   selected_loadout = 1
   credits = 5000
   loadout_select_text_panels = {}
-  for i = 9, 15 do
+  for i = 10, 16 do
     add(loadout_select_text_panels, textpanel:new(unpack(stats[i])))
   end
 
-  cost_table = stats[6]
+  cost_table = stats[7]
   selected_debrief = 1
   loadout_select_sliders = {
     slider:new(66, 22, stats[1]), -- health
     slider:new(66, 36, stats[2]), -- energy
     slider:new(66, 50, stats[3]), -- range
-    slider:new(66, 64, stats[4]), -- quick_shoot
-    slider:new(66, 78, stats[5]), -- regen
+    slider:new(66, 64, stats[4]), -- atk force
+    slider:new(66, 78, stats[5]), -- atk rate
+    slider:new(66, 92, stats[6]), -- regen
   }
 
   debrief_text_panels = {
@@ -336,8 +352,8 @@ mission4]])
   player_hud = player_hud:new()
   view_radius = 50
   player_copy = nil
-  swap_palette = stats[7]
-  swap_palette_dark = stats[8]
+  swap_palette = stats[8]
+  swap_palette_dark = stats[9]
   load_entities()
 end
 
@@ -345,11 +361,14 @@ end
 function _update()
   state_actions[current_game_state].update()
   door_effect:update()
+  update_player_copy()
+end
 
+
+function update_player_copy() 
   local player = get_controlled_entity()
   if player then player_copy = player end
 end
-
 
 function _draw()
   state_actions[current_game_state].draw()
@@ -362,7 +381,7 @@ end
 ---------
 function draw_intro()
   reset_palette_and_transparency(true)
-  map(28, 18, 0, 0, 128, 48)
+  map(88, 25, 0, 0, 128, 48)
   draw_shadow(128,128,0, swap_palette_dark)
 
   if sin(intro_blink)<.9 then
@@ -446,7 +465,6 @@ function draw_loadout_select()
   reset_palette_and_transparency(true)
   map(0, 0, 0, 0, 128, 48)
   draw_shadow(-20,-20, 10, swap_palette_dark)
-
   print(smallcaps("credits: "..tostr(credits)), cam.x + 70, cam.y + 4, 11)
 
   for i, panel in ipairs(loadout_select_text_panels) do
@@ -467,7 +485,7 @@ end
 
 function update_loadout_select()
   local num_panels = #loadout_select_text_panels
-  local current_loadout = loadout_select_sliders[selected_loadout]
+  local current_slider = loadout_select_sliders[selected_loadout]
 
   if btnp(⬆️) then
     sfx(19)
@@ -477,30 +495,24 @@ function update_loadout_select()
     selected_loadout = (selected_loadout % num_panels) + 1
   end
 
-
-  if selected_loadout == 6 then
+  if selected_loadout == 7 then
     if btnp(❎) then
       sfx(20)
       door_effect.closing = true
     end
-  elseif selected_loadout == 7 then
-    if btnp(❎) then
-      sfx(19)
-      current_game_state = game_state.mission_select
-    end
   else
     if btnp(⬅️) then
-      if current_loadout.value > 1 then
-        credits += cost_table[current_loadout.value - 1]
-        current_loadout.value -= 1
+      if current_slider.idx > 1 then
+        credits += cost_table[current_slider.idx - 1]
+        current_slider.idx -= 1
         sfx(09)
       else
         sfx(14)
       end
     elseif btnp(➡️) then
-      if credits >= cost_table[current_loadout.value] and current_loadout.value < 10 then
-        credits -= cost_table[current_loadout.value]
-        current_loadout.value += 1
+      if credits >= cost_table[current_slider.idx] and current_slider.idx < 10 then
+        credits -= cost_table[current_slider.idx]
+        current_slider.idx += 1
         sfx(09)
       else
         sfx(14)
@@ -606,7 +618,8 @@ function slider:new(x, y, values)
   local self = setmetatable({}, slider)
   self.x, self.y = x, y
   self.values = values
-  self.value = 1
+  self.idx = 1
+  self.value = values[1]
   self.total_values = 10
   self.selected = false
   return self
@@ -614,13 +627,13 @@ end
 
 
 function slider:draw()
-  local total_width = 3 * self.value - 1
+  local total_width = 3 * self.idx - 1
   local start_x, start_y = self.x + cam.x, self.y + cam.y
 
   -- Draw each rectangle
   for i = 1, self.total_values do
     local color = self.selected and 6 or 5
-    if i <= self.value then
+    if i <= self.idx then
       color = 11
     end
     local rect_x = start_x + (i - 1) * 3
@@ -630,11 +643,12 @@ function slider:draw()
     print("⬅️        ➡️", start_x - 9, start_y, 5)
   end
   local color = self.selected and 6 or 5
-  print("             "..tostr(self.values[self.value]), start_x - 9, start_y, color)
+  print("             "..tostr(self.values[self.idx]), start_x - 9, start_y, color)
 end
 
 
 function slider:update()
+  self.value = self.values[self.idx]
 end
 
 
@@ -770,22 +784,28 @@ function load_entities()
     add(laser_doors, laser_door:new(unpack(params)))
   end
 
+  update_player_copy()
+
   -- Apply stats to player
   player = get_controlled_entity()
-  local health = loadout_select_sliders[1].values[loadout_select_sliders[1].value]
+  local health = loadout_select_sliders[1].value
   player.max_health, player.health = health, health
   
-  local energy = loadout_select_sliders[2].values[loadout_select_sliders[2].value]
+  local energy = loadout_select_sliders[2].value
   player.max_energy, player.energy = energy, energy
 
-  player.view_radius = loadout_select_sliders[3].values[loadout_select_sliders[3].value]
-  player.ability_actions[1].damage = loadout_select_sliders[4].values[loadout_select_sliders[4].value]
-  player.ability_actions[2].damage = loadout_select_sliders[4].values[loadout_select_sliders[4].value] * 5
-
+  player.view_radius = loadout_select_sliders[3].value
   
-  local regen_count = loadout_select_sliders[5].values[loadout_select_sliders[5].value]
-  player.ability_actions[3].current_ammo = regen_count
-  player.ability_actions[3].max_ammo = regen_count
+  local ability_actions, attack_force_slider, attack_rate_slider = player.ability_actions, loadout_select_sliders[4], loadout_select_sliders[5]
+  ability_actions[1].damage = attack_force_slider.value
+  ability_actions[2].damage = attack_force_slider.value * 5
+
+  ability_actions[1].attack_cooldown = attack_rate_slider.value
+  ability_actions[2].attack_cooldown = attack_rate_slider.value * 3
+  
+  local regen_count = loadout_select_sliders[6].value
+  ability_actions[3].current_ammo = regen_count
+  ability_actions[3].max_ammo = regen_count
 
   emitters, barrels, interfaces = {}, {}, {}
   interface_textline_idx = 1
@@ -821,6 +841,7 @@ end
 -- GAMEPLAY
 ------------------
 function update_gameplay()
+  printh(time())
   local all_entities = {
     entities, projectiles, particles, emitters, 
     laser_doors, barrels, interfaces, {cam, player_hud}
@@ -1081,7 +1102,7 @@ function entity:new(x, y, controlled, entity_name)
   self.animation_frame = 1
 
   self.frame_counter = 0
-  self.energy_recharge_rate = 5
+  self.energy_recharge_rate = 2
 
   self.current_state = enemy_state.idle
   self.target = {x=self.x, y=self.y}
@@ -1112,8 +1133,8 @@ function entity:new(x, y, controlled, entity_name)
       current_ammo = 50,
       max_ammo = 50,
       current_cooldown = 0,
-      attack_cooldown = 10,
-      projectile_speed = 3,
+      attack_cooldown = self.attack_cooldown * 3,
+      projectile_speed = 5,
       energy_cost = 150,
       radius = 2,
       damage = self.attack_power * 5
@@ -1123,7 +1144,7 @@ function entity:new(x, y, controlled, entity_name)
       description = "Regen Field",
       current_ammo = 3,
       max_ammo = 3,
-      regen = 25
+      regen = 200
     }
   }
 
@@ -1179,6 +1200,7 @@ function entity:shoot()
 
 
   if self.energy > current_ability.energy_cost and current_ability.current_ammo > 0 and current_ability.current_cooldown == 0 then
+    sfx(18)
     local proj = projectile:new(
       self.x + offset_x, 
       self.y + offset_y, 
@@ -1199,8 +1221,8 @@ end
 
 function entity:health_recharge()
   local current_ability = self.ability_actions[self.current_ability_index]
-
   if self.heal_cooldown == 0 and current_ability.current_ammo > 0  and self.health + current_ability.regen < self.max_health then
+    sfx(10)
     self.health += current_ability.regen
     current_ability.current_ammo -= 1
     self.heal_cooldown = 40
@@ -2104,53 +2126,53 @@ eeeeeeeeeeeeeeeeeeeeeeeeeee3333eeeeeeeeeeeeeeeeeeeeeeeeee6655555eeee11555555566e
 53353535e111555e51555555555555151112222255555555ee111155eeeeee11eeee115511eeeeee11dddd220000000055555511115555556666670666600006
 33333535ee1155ee1555555555555551611222265555555511115555eeeeee11eeee115511eeeeee111222220000000055555551155555556666606666666666
 b7b78506f3d1d1d5f3f3f3f3f3f3f3d5d1d1d1f30695b40557256515054515453505451515655725156557254515156557253545155705c4750670c1d1f306a4
-00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+74b60606060606060606060606060606b6f3d1d1f3f3f3f3f3d1d5d1f3d6e65161d1d4f3e6e6e6e6e6e6e5d1d5d1f2b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 b7b78606f3d1f6e5f3f3c60606b6f3d55161d1f306a675c6060706060606060706070606060606060606060606060606060607060606b6958506c1d1d1f306a4
-00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b504040404040404040404040404043606f3d1d1f3f3f3f3f3d1d6e6f3d1d15262e6e5f3d1d1d1d1d1d1d1d1d5d1f2b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 b7b78506f3d1d1d1f3f306263606f3d65262d1f306a68706f3f3f3f3f3f3f3f3f3f3f3f3f3f3f37272f3f3f3f3f3f3f3f3f3f347474706977416f3d1d1f306a5
-00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b405050505050505050505050505c47406f3d1d1c60606b6f3d1d1d1f3d1d1d1d1d1d1f3d1d1d1f3f3f3d4e6e5f3f2b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 00007416f3f3f3f3f3f306948606f3d1d1d1d1f306a58606f3d1d1d1d1d1d1d1d1d1d1d1f3f3f3f3f3f3f3d1d1d1d1d1d1d1d1d1d1f316967506f3d1d1f306a5
-00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+74c60606060606060606060606b6947406f3d1d106263606f3d1d1d1d1f3d1d1d1d1f3d1d1d1d1f3c60606060606c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 000085b6070706b6f3f306948606f3f3f3f3727206a58606f3d1d1d1f3f372f3f3d1d1d1f3c6060606b6f3d1d1f3f3f3f3f3f3d1d1f316968706f3d1d1f3b694
-00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3f3f3f3f3f3f3f3f3f3f306947406f3d1d106947406f3d1d1d1d4e5f3f3f3f3d1d1d4e6e6e606260404040444b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 0000b52434243606f3f3069485b6070706070706c6a485b6f4f2f2f2f50606b6f3d1d1d1f306262436b6f3d1d1f3f3f3f3f3f3d1d1f306977506f3d1d1f30695
-00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
-b4456567655737b2f3f30694b50434240434343424c5b544d3f2f2f2e3243606f3d1f6d1f316a4b77406f3d1d1f347d1d1d1f3d1d1f306a687b2f3d1d1f306a6
-00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3d1d1d1d1d1d1d15161f306947406f3d1d106947406f3d1d1d1d5d1d1d1d1d1d1d1d5d1d1f30694b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b4456567655737b2f3f30694b50434240434343424c5b544d3f2f2f2e3243606f3d1f6d1f316a4b77406f3d1d1f347d1d1d1f3d1d1f306a68716f3d1d1f306a6
+7406f3d1d1d1d1d1d1d15262f306947406f3d1d106947406f3d1d1d1d5d1d1d1d1d1d1d1d5d1d1f30694b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 75c60607060606c6f3f30627355705c4b7b7b7b7b7b7b7b7b7b7b7b7b7b77506f3d1d1d1f316a4b77406f3d1d1f34747d1d1f3d1d1f306978606f3d1d1f306a6
-00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3d1f3f3f3f3f3f3f3f3f306947406f3f3f306947406f3f3f3f3d5f3f3f3f3f3f3f3d5f3f3f30694b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 85067272f3d5f3f3f3f3b6060706b695b7d0b7b7b7b7b7b7b7d0b7b7b7b7870672f3f3f3f316a4008416f3d1d1f3d1d1d1d1f3d1d1f306a5850672d1d1b006a5
-00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3d1f3c606060606060606c69474b6060606c69474b6060606060606b6f3f3c6060606060606c694b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 8506f3d1d1d5d1d1f3f3f3f3f3f3f4e2b7b7b7d0b7b7b7b7b7b7b7b7b7b785b60607060606c6a5b78416f3d1d1f3f3f3f3f3f3d1d1f316968606f372b07006a4
-00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3d1f3062604040404040404c5b50404040404c5b50404040404043606f3f30626040404040404c5b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 8606f3d1f6e5d1d1f3f3d1d1d1d1f2f2b7b7b7b7b7b7d0b7b7b7b7d0b7b7b504344454546424c5b77416f3d1d1d1d1d1d1d1d1d1d1f316968506f3d1b17006a4
-00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3d1f30694b40505050505050505050505050505000000b40505053706f3f306270505050505050505c4b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 8506f3d1d1d1d1d1f3f3d1d1d1d1f2f2b7b7d0b7b7b7b7b7b7b7b7b7b7b717b7b7b7b7b7b7b7b7b7761647d1d1d1d1d1d1d1d1d1d1f306977416f3d1d1b106a5
-00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3d1f3069474c6060606060606060606060606060505c474c6060606c6f3f3b60606060606060606b694b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 7416f3f3f3f3f3f3f3f3f3f3f3f3c7e3b7b7b7b7b7b7b7b7b40545655567572565151545052535c48506f347f347f3f3d1d1d1f3f34706a577b2e6e6e4f306a6
-00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3d1f306947406f3f3f3f3f3f3f3f3f3f3f3f3f306b6947406f3f3f3f3f3f3f3f3f3f3d5f3f3f3f30694b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 85b6070706060606060706060607c6a5b7b7b7b7b7b7d0b775c6060606c30607060606070606b69574b60606060606f4f2f2f2f50607c6948516f3d1d5f306a5
-00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3d1f306947406f3d1d1d1d1d1d1d1d1d1d1d1d1f306947406f3d1d1d1d1d1d1d1d1d1d6e65161f30694b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 b52434244464646656346466563456c5171717171717171785067070c1d5f3f3f3f3f3f3727206a5b5040404040444d3f2f2f2e3563456c58516f3d1d5f30697
-00b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3d1f306947406f3f3f3f3f3f3f3f3f3f3f3f3f3f306947406f3d1d1d1d1d1d1d1d1d1d1f35262f30694b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 0000000000d000000000b7b7b7b7b7b40545655555675725371670c1d1d5d1d1d1d1d1d1d1f306270505355705c4000000000000000000007706f3d1d6e6c2a5
-b7b7b7b700000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3d1f3069474b606b6f3f3c606060606b6f3f3c606c6947406f3f3f3f3f3f3f3f3f3f3f3f3f3f3f30694b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 d0b7b7b7b7b7b7b7b7b7b7b7b7b7b775c6060606c306060706c6c1d1d1d5d1d1d1d1d1d1d1f3b60606060706b695000000000000000000008516f3d1d1f31696
-b7b7b7b700000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3d1f30694b5043606f3f3062604043606f3f3062604c57406f3f3c6060606060606060606060606c694b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 b7b7d0b7b7b7d0b7b7d0b7b7b7d0b7770672f3f3d5f3f3f3f3f3f3d1d1d5d1d172d1d1d1d1f3f3f372f3f3f3f4e2b7b7b7b7b7b7b75557053706f3f3f3f316a5
-b7b7b7b700000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3d1f3062705053706f3f3062705c47406f3f3062705053706f3f30626040404040404040404040404c5b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 b7b7b7d0b7b7b7b7b7b7b7b7b7b7b78416f35161d5d1d1d1d1d1d1d1d4e57272d1d1d1d1d1f3d1d1d1d1d1d1f2f2b7b7b7b7b7b7d2f5060606c6f3f3c606c694
-b7b7b7b700000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3d1f3b606060606c6f3f3b606b6947406f3f3b606060606c6f3f30694b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 b7b7b7b7b7b7b7b7b7b7b7b7d0b7b77516f35262e5f3f3f3f3f3f3d1d5d1d1d1d1d1d1d1d1f3d1d1d1d1d1d1f2f2b7b7b7b7b7b7f2f2f3f3f3f3f3f3062604c5
-b7b7b7b700000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3d1f3f3f3f3f3f3f3f3f3f3f306947406f3f3f3f3f3f3f3f3f3f30694000000000000000000000000000000000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 b7b7b7b7d0b7b7b7b7b7b7b7b7b7b77706f3d1d1d1f3c60606b6f3d1d5d1d1d1d1d1d1d1d1f3f3f3f3f3f3f3c7e3b7b7b7b7b7b7f2f2d1d1d1d1f3f30695b7b7
-b7b7b7b700000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3d1d1d1d1d1d1d1d1d1d1d1f306947406f3f3d1d1d1d1d1d1f3f30694000000000000000000000000000000000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 b7d0b7b7b7b7b7b7d0b7b7b7b7d0b77606f3f3f3727206263606f3f3d5f3f3f3f3f3f3f3f3f3c60606060607c6a5b7b7b7b7b7b7f2f2f3f3f3f3f3f30696b7b7
-b7b7b7b700000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+7406f3f3f3f3f3f3f3f3f3f3f3f3f306947406f3f3f3f3f3f3f3f3f3f30694000000000000000000000000000000000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 b7b7b7b7b7b7b7b7b7b7b7b7b7b7b785b60607070606c69485b60606b3060607070606060607c6260404563456c5b7b7b7b7b7b7d3d7060606070606c6a5b7b7
-b7b7b7b700000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+74b606060606060606060606060606c69474b606060606060606060606c694000000000000000000000000000000000000b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 b7d0b7b7b7b7b7b7b7b7b7b7b7b7b7b524343404445604c5b52404546464545634044466563424c5b7b7b7b7b717171717171717176656045634245624c5b7b7
-b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
+b5040404040404040404040404040404c5b5040404040404040404040404c5b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7
 eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
@@ -2171,44 +2193,44 @@ __gff__
 0000000000000004000004040400000000000000000101000000400404000000000000000001814100000001010808080000000000000000000000010108080002020202020202020202020202000001020202020202020202020202020000010101020201020202020202010100002101010202410202020202010801010000
 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 __map__
-4b5054565555767552565151545052534c7b7b7b004b50535054515156755253545175534c7b7b7b7b4b505053545175534c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b00
-576c6060603c60607060606070603c6b597b7b7b00476c60706060603c6060706060606b497b7b7b7b576c70706060606b597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b00
-58603f3f3f5d3f3f3f3f3f3f3f3f6d2c5a7b7b7b0048603f3f3f3f3f5d3f3f3f3f3f3f60597b7b7b7b77603f3f3f5d3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b00
-48613f6f6e5e1d1d1d1d1d1d1d1d3f60725456757573613f6f6e6e6e5e1d1d1d1d1d3f61697b7b7b7b58613f1d1d5d3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b00
-48613f1d1d1d1d1d1d1d1d1d6f4e3f6b6060606060606c3f1d1d1d1d1d1d1d1d1d1d3f60725456565073603f1d6f5e3f6072525252754c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-47613f1d1d1d1d1d1d1d1d1d1d5d3f3f3f3f3f3f3f3f3f3f1d1d1d1d1d1d1d1d1d1d3f6b606060603c606c3f1d1d1d3f6b606060606b72757551515675754c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-572b6e6e6e6e4e1d1d1d1d1d1d5d3f3f3f3f3f3f3f3f3f3f1d1d1d1d1d1d1d1d1d1d3f3f3f3f3f3f5d3f3f3f3f3f3f3f3f3f3f3f3f6b607070606070606b497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-77603f1d1d1d5d1d1d1d1d1d1d5d3f6c6060707070606b3f1d1d1d1d3f3f1d1d1d1d3f3f3f3f3f4d5e3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f743f60597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-67613f1d1d1d6d6e6f1d1d1d1d6d6e2c624665434363603f1d1d1d1d3f3f1d1d1d1d3f6c6060603b606070606060606b3f3f3f3f3f3f3f3f3f3f743f3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-67603f3f3f3f3f3f3f3f3f3f3f3f3f614a7b7b7b0057603f1d1d1d1d3f3f1d1d1d1d3f606244666641654342426563603f1d1d1d3f6c607060606b3f3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-586b606060606060707060606060706c4a7b7b7b0067603f1d1d1d1d1d1d1d1d1d1d3f61697b7b7b7b7b7b7b7b0057603f1d6f4e3f6062434063603f3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-5b4240444546464565434044666543425c7b7b7b0067613f1d1d1d1d1d1d1d1d1d1d3f60794b505053545175534c77603f1d1d6d6e2c59000057603f746b497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b0077603f1d1d1d1d1d1d1d1d1d1d3f606a576c70706060606b5967603f3f3f3f3f605a000078603f3f60597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-4b535275567552755256515154755075525652754c68603f1d1d1d1d1d4d6e6e6e6f3f607977603f3f3f5d3f606a586b60707060606c49000068603f3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-476c606060603c6070606060706060603c603c6b4977603f3f3f3f3f3f5d3f3f3f3f3f605a58613f1d1d5d3f605a5b424343404465405c000058603f3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-57603f3f3f3f3f1d3f3f3f3f5d1d3f3f3f3f5d6059786b6070606060603b60607060606c5a77603f1d6f5e3f607250547552565151757575757360743f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-78603f1d1d1d3f1d3f1d1d1d5d1d3f1d1d1d5d61695b40434445454666664165434265425c58613f1d1d1d3f6b606060607060606070707070606c3f3f604a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-48603f1d6f1d3f1d3f1d6f6e5e1d3f1d6f6e5e6169004b505053505151567552535451754c77603f3f3f3f3f3f3f3f3f3f27273f3f3f3f3f3f3f74743f604a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-57603f1d5d1d3f1d3f1d1d1d3f1d3f1d1d1d3f607252736c60607060606060607060606b5958613f3f3f3f3f3f3f273f3f3f3f3f3f273f3f3f3f3f3f74605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-78603f3f5d3f3f1d3f3f3f3f3f1d3f3f3f3f3f6b6060606c3f3f3f3f07070c3f3f7474607273603f3f6c6060603b7060606060606070607060606060706c497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-57603f1d5d1d1d1d1d1d1d1d1d1d1d1d1d1d3f3f273f3f3f3f1d1d1d0707071d741d3f6b60606c3f3f6062446666434044464645654340404044666543405c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-782b6e6e5e1d1d1d1d1d1d1d1d1d1d1d1d1d3f3f3f3f273f3f1d1d1d1b07070c1d1d3f3f3f3f3f3f3f60794b50505050505050504c4b5050505050535451534c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-68603f1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d3f6c6060706b271d1d1d0b070c1d1d1d3f3f3f3f3f3f3f605a576c6060606060606b4a476c60603c707060606b597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-58603f3f3f3f3f1d1d1d1d1d1d1d1d1d1d1d3f60624363613f1d1d1d07071c1d1d1d3f6c60607060606c5a576027273f3f3f3f607273603f3f5d3f3f3f3f60597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-68603f1d6f1d3f1d1d1d1d1d1d1d1d1d1d1d3f606a7147613f1d1d0b07071d1d1d1d3f606265434265425c78603f1d1d1d1d3f6b60606c3f1d5d1d1d1d3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-58603f1d5d1d3f1d1d1d1d1d1d1d1d1d1d1d3f605a7157613f1d1d1d07071d1d1d1d3f60597b7b7b7b7b7b48603f1d1d1d1d3f3f3f3f3f3f1d5d1d1d1d3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-47613f3f5d3f3f3f3f3f3f3f3f3f3f3f3f3f3f605a7167603f1d1d1d1b071d1d1d1d0b606a7b7b7b7b7b7b57603f1d1d1d1d1d1d1d1d1d1d1d6d6e6e4e3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-586b60703b60606b3f3f6c60606060606070606c49716760071d1d1d271d1d1d1d1d07606a7b7b7b7b7b7b78603f1d1d1d1d3f3f3f3f3f3f1d1d1d1d6d6e2c497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-5b424043446663603f3f606245654466654342405c716761071c1d1d1d271d1d1d1d1b605a7b7b7b7b7b7b57603f1d1d1d1d3f6c60606b3f1d0b1d1d1d3f60597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-7b7b4b50755273613f3f60725050505052505353504c67601c07073f3f3f3f3f3f7474605a7b7b7b7b7b7b782b3f3f3f27273f606263603f0b07070c1d3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-7b7b576c6070606c3f3f6b606060603c607070606b6a586b60607060606060606070606c497b7b7b7b7b7b586b6060606060606c4a586b60606b07071d3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
-7b7b58603f3f3f5d3f3f3f3f3f3f3f5d3f3f3f3f60595b424044434466654466654342405c7b7b7b7b7b7b5b42404040404040405c5b4240636007072727605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+4b5054565555767552565151545052534c7b7b7b004b50535054515156755253545175534c7b7b7b7b4b505053545175534c7b7b7b7b7b7b7b7b7b7b7b7b7b7b4b5050505050505050505050504c4b5050505050505050505050504c717171717171717171717171717171717171717171717171717171717171717171717171
+576c6060603c60607060606070603c6b597b7b7b00476c60706060603c6060706060606b497b7b7b7b576c70706060606b597b7b7b7b7b7b7b7b7b7b7b7b7b7b476c606060606060606060606b59476c606060606060606060606b597b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71
+58603f3f3f5d3f3f3f3f3f3f3f3f6d2c5a7b7b7b0048603f3f3f3f3f5d3f3f3f3f3f3f60597b7b7b7b77603f3f3f5d3f606a7b7b7b7b7b7b7b7b7b7b7b7b7b7b47603f3f3f3f3f3f3f3f3f3f607273603f3f3f3f3f3f3f3f3f3f60797b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71
+48613f6f6e5e1d1d1d1d1d1d1d1d3f60725456757573613f6f6e6e6e5e1d1d1d1d1d3f61697b7b7b7b58613f1d1d5d3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b47603f1d1d1d1d1d1d1d1d3f6b60606c3f1d1d1d1d1d1d1d1d3f4f2e7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71
+48613f1d1d1d1d1d1d1d1d1d6f4e3f6b6060606060606c3f1d1d1d1d1d1d1d1d1d1d3f60725456565073603f1d6f5e3f6072525252754c7b7b7b7b7b7b7b7b7b47603f1d1d1d1d1d1d1d1d3f3f3f3f3f3f1d1d1d1d1d1d1d1d1d2f2f7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71
+47613f1d1d1d1d1d1d1d1d1d1d5d3f3f3f3f3f3f3f3f3f3f1d1d1d1d1d1d1d1d1d1d3f6b606060603c606c3f1d1d1d3f6b606060606b72757551515675754c7b47603f1d1d1d1d1d1d1d1d3f3f3f3f3f3f1d1d1d1d1d1d1d1d1d2f2f7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71
+572b6e6e6e6e4e1d1d1d1d1d1d5d3f3f3f3f3f3f3f3f3f3f1d1d1d1d1d1d1d1d1d1d3f3f3f3f3f3f5d3f3f3f3f3f3f3f3f3f3f3f3f6b607070606070606b497b47603f1d1d1d1d1d1d1d1d3f6c60606b3f1d1d1d1d1d1d1d1d1d2f2f7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71
+77603f1d1d1d5d1d1d1d1d1d1d5d3f6c6060707070606b3f1d1d1d1d3f3f1d1d1d1d3f3f3f3f3f4d5e3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f743f60597b47603f1d1d1d1d1d1d1d1d3f606263603f1d1d1d1d1d1d1d1d3f7c3e7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71
+67613f1d1d1d6d6e6f1d1d1d1d6d6e2c624665434363603f1d1d1d1d3f3f1d1d1d1d3f6c6060603b606070606060606b3f3f3f3f3f3f3f3f3f3f743f3f606a7b47603f3f3f3f3f3f3f3f3f3f604947603f3f3f3f3f3f3f3f3f3f605a7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71
+67603f3f3f3f3f3f3f3f3f3f3f3f3f614a7b7b7b0057603f1d1d1d1d3f3f1d1d1d1d3f606244666641654342426563603f1d1d1d3f6c607060606b3f3f606a7b476b6060606b3f3f6c6060606c49476b6060606b3f3f6c6060606c497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71
+586b606060606060707060606060706c4a7b7b7b0067603f1d1d1d1d1d1d1d1d1d1d3f61697b7b7b7b7b7b7b7b0057603f1d6f4e3f6062434063603f3f605a7b5b40404063603f3f60624040405c5b40404063603f3f60624040655c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71
+5b4240444546464565434044666543425c7b7b7b0067613f1d1d1d1d1d1d1d1d1d1d3f60794b505053545175534c77603f1d1d6d6e2c59000057603f746b497b4b50505073603f3f60725050504c4b50505073603f3f60725050504c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71
+7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b0077603f1d1d1d1d1d1d1d1d1d1d3f606a576c70706060606b5967603f3f3f3f3f605a000078603f3f60597b476c6060606c3f3f6b6060606b49476c6060606c3f3f6b6060606b497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71
+4b535275567552755256515154755075525652754c68603f1d1d1d1d1d4d6e6e6e6f3f607977603f3f3f5d3f606a586b60707060606c49000068603f3f606a7b47603f3f3f3f3f3f3f3f3f3f604947603f3f3f3f3f3f3f3f3f3f60497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71
+476c606060603c6070606060706060603c603c6b4977603f3f3f3f3f3f5d3f3f3f3f3f605a58613f1d1d5d3f605a5b424343404465405c000058603f3f606a7b47603f1d1d1d1d1d1d1d1d3f604947603f1d1d1d1d1d1d1d1d3f60497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71
+57603f3f3f3f3f1d3f3f3f3f5d1d3f3f3f3f5d6059786b6070606060603b60607060606c5a77603f1d6f5e3f607250547552565151757575757360743f605a7b47603f1d1d1d1d1d1d1d1d3f607273603f1d1d1d1d1d1d1d1d3f60497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71
+78603f1d1d1d3f1d3f1d1d1d5d1d3f1d1d1d5d61695b40434445454666664165434265425c58613f1d1d1d3f6b606060607060606070707070606c3f3f604a7b47603f1d1d1d1d1d1d1d1d3f6b60606c3f1d1d1d1d1d1d1d1d3f60497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b71
+48603f1d6f1d3f1d3f1d6f6e5e1d3f1d6f6e5e6169004b505053505151567552535451754c77603f3f3f3f3f3f3f3f3f3f27273f3f3f3f3f3f3f74743f604a7b47603f1d1d1d1d1d1d1d1d3f3f3f3f3f3f1d1d1d1d1d1d1d1d3f604900000000000000007b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+57603f1d5d1d3f1d3f1d1d1d3f1d3f1d1d1d3f607252736c60607060606060607060606b5958613f3f3f3f3f3f3f273f3f3f3f3f3f273f3f3f3f3f3f74605a7b47603f15161d1d1d1d1d1d3f3f3f3f3f3f1d1d1d1d1d1d1d1d3f60494b542d2f2f2e754c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+78603f3f5d3f3f1d3f3f3f3f3f1d3f3f3f3f3f6b6060606c3f3f3f3f07070c3f3f7474607273603f3f6c606060707060606060606070607060606060706c497b47603f25261d1d1d1d1d1d3f6c60606b3f1d1d1d1d1d1d1d1d3f6049476c7c2f2f7d6b497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+57603f1d5d1d1d1d1d1d1d1d1d1d1d1d1d1d3f3f273f3f3f3f1d1d1d0707071d741d3f6b60606c3f3f6062446666434044464645654340404044666543405c7b47603f3f3f3f3f3f3f3f3f3f606263603f3f3f3f3f3f3f3f3f3f604947603f1d1d3f60497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+782b6e6e5e1d1d1d1d1d1d1d1d1d1d1d1d1d3f3f3f3f273f3f1d1d1d1b07070c1d1d3f3f3f3f3f3f3f60794b50505675525354504c4b5050505050535451534c476b606060606060606060606c49476b606060606060606060606c4947603f3f3f3f60497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+68603f1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d3f6c6060706b271d1d1d0b070c1d1d1d3f3f3f3f3f3f3f605a576c6060606070606b4a476c60603c707060606b595b4040404040404040404040405c5b4040404040404040404040405c476b6b3f3f6c6c497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+58603f3f3f3f3f1d1d1d1d1d1d1d1d1d1d1d3f60624363613f1d1d1d07071c1d1d1d3f6c60607060606c5a676027273f3f3f3f607273603f3f5d3f3f3f3f60594b5050505050505050504c7b7b7b7b4b50505050504c0000000000005b63603f3f60625c0000000000007b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+68603f1d6f1d3f1d1d1d1d1d1d1d1d1d1d1d3f606a7147613f1d1d0b07071d1d1d1d3f606265434265425c58603f1d1d1d1d3f6b60606c3f1d5d1d1d1d3f606a476c606060606060606b497b7b7b7b476c6060606b494b50505050505073603f3f60725050505050504c7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+58603f1d5d1d3f1d1d1d1d1d1d1d1d1d1d1d3f605a7157613f1d1d1d07071d1d1d1d3f60594b505353505073603f1d1d1d1d3f3f3f3f3f3f1d5d1d1d1d3f606a47603f3f3f3f1b072760497b7b7b7b47603f3f3f6049476c6060606060606c3f3f6b6060606060606b497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+47613f3f5d3f3f3f3f3f3f3f3f3f3f3f3f3f3f605a7167603f1d1d1d1b071d1d1d1d0b606a476c60606060606c3f1d1d1d1d1d1d1d1d1d1d1d6d6e6e4e3f605a47603f1d1d1d1d1b1c60497b7b7b7b47603f1d1d604947603f3f3f3f5d3f3f3f3f3f5d3f3f3f3f3f60497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+586b60703b60606b3f3f6c60606060606070606c49716760071d1d1d271d1d1d1d1d07606a57603f3f3f3f3f3f3f1d1d1d1d3f3f3f3f3f3f1d1d1d1d6d6e2c4947603f1d1d1d1d1d3f60497b7b7b7b47603f1d1d604947603f1d1d1d6d4e1d1d1d1d5d1d1d1d1d3f60497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+5b424043446663603f3f606245654466654342405c716761071c1d1d1d271d1d1d1d1b605a67603f1d1d1d1d1d1d1d1d1d1d3f6c60606b3f1d0b1d1d1d3f605947603f1d1d1d1d1d3f60725050505073603f1d1d604947603f1d1d1d1d5d1d1d1d1d5d1d1d1d1d3f60497b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+7b7b4b50755273613f3f60725050505052505353504c67601c07073f3f3f3f3f3f7474605a58603f3f3f3f3f3f3f3f3f27273f606263603f0b07070c1d3f606a47603f1d1d1d1d1d3f6b6060606060606c3f1d1d604947606e6e4e1d1d5d3f3f3f3f5e1d1d1d1d3f607250505050547b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+7b7b576c6070606c3f3f6b606060603c607070606b6a586b60607060606060606070606c49476b6060606060607060606060606c4a586b60606b07071d3f606a47603f1d1d1d1d1d3f3f74743f3f3f743f3f1d1d607273603f1d5d1d1d3f1d1d1d1d3f1d1d1d1d3f6b60606060604f7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
+7b7b58603f3f3f5d3f3f3f3f3f3f3f5d3f3f3f3f60595b424044434466654466654342405c5b40426665446665434040404040405c5b4240636007072727605a476074743f3f3f3f3f3f3f3f743f3f3f3f3f1d1d6b60606c3f1d5d1d3f5d1d1d1d1d1d3f1d1d1d3f3f3f5d3f5d3f2f7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b
 __sfx__
 151000000c0730000000000000000c013000000000000000266550d0000e625000000e615000000e615000000c0730000000000000000c013000000c07300000266550d0000e625000000e615000000e61500000
 a5100000021450e14502115021450212502115021450e11502145021250211502145021250211502145021150f145031250311503145031250f1150314503115021450e1250211502145021250e1150214502115
 c3100000027500e73002710027500272002710027500271002750027300271002750027200271002750027100f750037200371003750037200f7100374003710027500e7300271002750027200e7100275002710
 a71000000c0730c0000c033000000c023000000c013000000c003000000000000000000000000000000000000c0730c0000c033000000c023000000c013000000000000000000000000000000000000000000000
-150e00000c0730000000000000000c013000000c0730c000266550d0000e625000000e625000000e615000000c0730000000000000000c013000000c07300000266550d0000e625000000e615000000e61528600
+151000000c0730000000000000000c013000000c0730c000266550d0000e625000000e625000000e615000000c0730000000000000000c013000000c07300000266550d0000e625000000e615000000e61528600
 cd0e000008d500cd5010d5013d5017d5018d5017d5014d500ed5009d5005d5001d5005d5008d500dd5010d5008d500cd5010d5013d5017d5018d5017d5014d5010d500bd5009d5008d5007d5009d500dd500fd50
 47010000000000000000000000003706035060310600000000000000002506000000000000000000000160600000000000000000a060000000000000000000000000000000000000000000000000000000000000
 47010000000000000009770097700a7700a7700a6700b7700c7700d7700f77011670117701377015770177701b6701b7701d77021770267702877000000000000000000000000000000000000000000000000000
@@ -2221,18 +2243,25 @@ d1090000397702d67029770246701e77018670127700c6700a740056400574005640047400464003
 170500003c6550b655036550000600000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 1706000000453024530445306453084530b4530e45311453164531a4531c4531e45320453224532445327453294532c4532f45332453344533745300000000000000000000000000000000000000000000000000
 170600003745337453354533345332453304532c4532945326453224531f4531c4531b4531945315453114530e4530c4530945307453044530245300000000000000000000000000000000000000000000000000
-a4100000021450e14502115021450a12502115021450e1150214502125021150a145091250211502145021150f14503125031150a145031250f115031450b115021450a125021150a145021250a1150214502115
-a30300002d4512245118451124510e451114030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+a5100000021450e14502115021450a12502115021450e1150214502125021150a145091250211502145021150f14503125031150a145031250f115031450b115021450a125021150a145021250a1150214502115
+a30300002d1212212118121121210e121111030010000100001000010000100001000010000100001000010000100001000010000100001000010000100001000010000100001000010000100001000010000100
 d7020000257571b757147570000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 d007000037650316502f65029650226501e65019650166501465012640106400e6400903005630036300262000620006200062000620016200162000620006100061000610006100061000610006100061000610
-d50e000008d550cd5510d5513d5517d5518d5517d5514d550ed5509d5505d5501d5505d5508d550dd5510d5508d550cd5510d5513d5517d5518d5517d5514d5510d550bd5509d5508d5507d5509d550dd5513d55
+d50e000027d550cd5510d5513d5517d5518d5517d5514d550ed5509d5505d5501d5505d5508d550dd5510d5508d550cd5510d5513d5517d5518d5517d5514d5510d550bd5509d5508d5507d5509d550dd5513d55
 cd0e00000cd550fd5513d550cd550fd5512d550cd550fd5510d550cd550fd5513d550cd550fd5514d5512d550cd550fd5513d550cd550fd5512d550cd550fd550ed550cd550fd5513d5516d5515d5514d5512d55
-011c000018d000fd0013d000cd000fd0012d000cd000fd0010d000cd000fd0013d000cd000fd0014d0012d000cd000fd0013d000cd000fd0012d000cd000fd000ed000cd000fd0013d0016d0015d0014d0012d00
+311000000675506755027550275502745027450273502735027250272502715027150271502715027150271507755077550275502755027450274502735027350272502725027150271502715027150271502715
+c31000000f7550f755037550375503745037450373503735037250372503715037150975509755097450974501755017550275502755027450274502735027350272502725027150271502715027150271502715
+c3100000027500e730027100275002720027100275002710027500273002710027500272002710027500271001750017200171001750017200171001740017100075000720007100075000720007100074000710
+010e00000c0730000000000000000c013000000c07300003266550d0000d625000000e6150e6050c6150e6050c0730000000000000000c073000000000000000266550d0000d625000000e6150e6050c6150e600
 __music__
-01 00015144
-03 00114344
-01 04154344
-02 04165844
-00 02404344
-03 02034344
+01 00175144
+00 00184344
+00 00170144
+00 04185844
+00 00171144
+00 02034344
+02 19034344
+03 1a154344
+00 03164344
+00 02424344
 
